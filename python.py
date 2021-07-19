@@ -9,11 +9,13 @@ z = int("3") # z will be 3 (casting)
 
 # lists
 listExample = ["Tulip", "Jasmine", "Rose", "Lili", "Daisy"]
+listExample2 = [1,2]
 listExample.append("orange") # adds to end of list
 listExample.insert(1, "orange") #insert in index
 listExample.pop(1)
 listExample.pop()
 del listExample[0] # remove specific index
+listExample.remove("Tulip") # remove specific value from the array
 print(listExample[-1]) #accessing last item
 print(listExample[2:5]) #range
 listExample.sort() #sort list
@@ -23,6 +25,7 @@ listExample.index("Jasmine") # findining at what index we have a value, returns 
 
 
 # sets
+setExample = set() # empty set
 setExample = {"apple", "banana", "cherry"}
 setExample.add("orange")
 setExample.remove("banana")
@@ -48,30 +51,30 @@ b = f"{a} fstring"
 print(a[1]) #string is Array
 len(a) #size, length
 # some string methods:
-isalpha()
-isdigit()
-isnumeric()
-islower()
-isupper()
+a.isalpha()
+a.isdigit()
+a.isnumeric()
+a.islower()
+a.isupper()
 
-upper()
-lower()
+a.upper()
+a.lower()
 a.replace("this","with that")
-startswith()
-splitlines()
-split()
-strip() # trim spaces
+a.startswith()
+a.splitlines()
+a.split()
+a.strip() # trim spaces
 ";".join(a)
-
-# Copy
-import copy
-copy.copy(x) #Return a shallow copy of x.
-copy.deepcopy(x) # Return a deep copy
 
 # Parse JSON
 import json
 x =  '{ "name":"John", "age":30, "city":"New York"}'
 y = json.loads(x)
+
+# Copy
+import copy
+copy.copy(y) #Return a shallow copy of x onject.
+copy.deepcopy(y) # Return a deep copy x object
 
 #read file
 f = open("demofile.txt", "r")
@@ -86,10 +89,12 @@ f.write("Now the file has more content!")
 f.close()
 
 # loops
-break
-continue
+while True:
+    break #b reak
+    continue # continue
 
 # while loop
+i = 0
 while i < 6:
  print(i)
  i += 1
@@ -106,3 +111,12 @@ for index, val in enumerate(listExample):
 for key, value in dictionaryExample.items():
     print(key)
     print(value)
+
+# loop over range (0-9):
+for n in range(0,9):
+    print(n)
+
+
+# Math
+import math
+math.floor(x)
