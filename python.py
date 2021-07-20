@@ -31,6 +31,14 @@ listExample.reverse()  # reverse list
 # findining at what index we have a value, returns 1
 listExample.index("Jasmine")
 
+# pythonic way to check if a list is empty or not
+# check if list is not  empty
+if listExample:
+    pass
+
+# check if list is empty
+if not listExample:
+    pass
 
 # sets
 setExample = set()  # empty set
