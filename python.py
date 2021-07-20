@@ -128,5 +128,6 @@ x ** 3 #x^3
 4 % 3 # modulo, returns 1
 
 #List Comprehension
-list = [expression for variable_name in iterable if variable_name == 'bbb']
-squares = [i**2 for i in range(5)]
+list = [expression_on_variable_name for variable_name in iterable if some_condition_on_variable_name]
+list = [c.lower() for c in "ABC" if c != 'A'] # will return ['b', 'c']
+squares = [i**2 for i in range(5)] # will return [0, 1, 4, 9, 16]
