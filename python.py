@@ -1,3 +1,4 @@
+import re
 import math
 import copy
 import json
@@ -84,10 +85,12 @@ a.strip()  # trim spaces
 ";".join(a)
 
 # Parse JSON
+# requires import math
 x = '{ "name":"John", "age":30, "city":"New York"}'
 y = json.loads(x)
 
 # Copy
+# requires import copy
 copy.copy(y)  # Return a shallow copy of x onject.
 copy.deepcopy(y)  # Return a deep copy x object
 
@@ -133,6 +136,7 @@ for n in range(0, 9):
 
 
 # Math
+# requires import math
 math.floor(x)  # floor
 x ** 3  # x^3
 7 // 2  # floor divide, returns 3
@@ -143,3 +147,32 @@ x ** 3  # x^3
 list = [expression_on_variable_name for variable_name in iterable if some_condition_on_variable_name]
 list = [c.lower() for c in "ABC" if c != 'A']  # will return ['b', 'c']
 squares = [i**2 for i in range(5)]  # will return [0, 1, 4, 9, 16]
+
+
+# regexp (regular expression)
+# requires import re
+
+# use r for python RAW string when you want to escape \ in regexp
+p = re.compile(r"\\")
+p = re.compile('[a-z]+')  # first we need to compile our regexp
+m = p.match("adasd+blabla")  # match the string with the expression we compiled
+
+m.group()  # returns the matching expression. In this case will return adasd
+m.start()  # returns the starting position of the match. In this case will return 0
+
+# search in the string for the matching regexcp. The difference with match, that match will return None if it's not entirely matching
+p.search("325abcd")
+
+"[a-c]"  # letters abc
+"[abc9]"  # letters abc and number 9
+"[0-9]"  # digits from 0 to 9
+"\s"  # matches any whitespace
+"\S"  # matches any Non whitespace
+"\w"  # matches any alphanumeric
+"\W"  # matches any Non alphanumeric
+
+"."  # matches any character
+"{m}"  # match expression m times
+"{m,n}"  # match expression a minimum of m and a maximum of n times
+"*"  # match expression 0 or more times
+"+"  # match expression 1 or more times
