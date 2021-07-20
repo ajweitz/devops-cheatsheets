@@ -9,7 +9,8 @@ z = int("3") # z will be 3 (casting)
 
 # lists
 listExample = ["Tulip", "Jasmine", "Rose", "Lili", "Daisy"]
-listExample2 = [1,2]
+listExample2 = list("hello") # will create array ['h','e','l','l','o']
+
 listExample.append("orange") # adds to end of list
 listExample.insert(1, "orange") #insert in index
 listExample.pop(1)
@@ -17,7 +18,8 @@ listExample.pop()
 del listExample[0] # remove specific index
 listExample.remove("Tulip") # remove specific value from the array
 print(listExample[-1]) #accessing last item
-print(listExample[2:5]) #range
+print(listExample[2:5]) #range, note that it does not include 5
+print(listExample[2:len(listExample)]) #range from 2 to last item
 listExample.sort() #sort list
 listExample = listExample + listExample2 # combine lists
 listExample.reverse() #reverse list
@@ -31,7 +33,7 @@ setExample.add("orange")
 setExample.remove("banana")
 
 #tuple
-tupleExample = ("one", "two", "three")
+tupleExample = ("one", "two", "three") # can be accessed like arrays, but cannot be modified
 
 # dict
 dictionaryExample = {
@@ -119,4 +121,12 @@ for n in range(0,9):
 
 # Math
 import math
-math.floor(x)
+math.floor(x) # floor
+x ** 3 #x^3
+7 // 2 # floor divide, returns 3
+-x # changed sign of x
+4 % 3 # modulo, returns 1
+
+#List Comprehension
+list = [expression for variable_name in iterable if variable_name == 'bbb']
+squares = [i**2 for i in range(5)]
