@@ -8,6 +8,7 @@
     - role: example
       x: "{{  var_from_cli  }}"
       y: "{{  var_from_group_vars  }}"
+      name: "John Smith"
     
     
     

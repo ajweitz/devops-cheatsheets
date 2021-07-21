@@ -10,3 +10,6 @@ There are several ways you can go about, you can check [Ansible Documentation](h
 `ansible.cfg` - Some configuration for ansible
 
 `roles` - Directory containing **roles**. Roles used to group a set of **tasks**, similar to classes in programming.
+
+## Tips
+always check [Ansible Galaxy](https://galaxy.ansible.com/) for existing roles, there is a lot of stuff people already wrote so you don't have to reinvent the wheel.
