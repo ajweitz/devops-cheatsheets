@@ -6,10 +6,10 @@ There are several ways you can go about, you can check [Ansible Documentation](h
 `ansible.sh` - This is just an example of shell commands you can run with the ansible CLI, it is not part of an actual project
 
 `inventory.ini` - This is where we define **hosts**
-`playbook-example.yml` - This is where we select which **roles** to run on what **hosts**
+`playbook-example.yml` - This is where we select which **roles** to run on what **hosts**  
 `ansible.cfg` - Some configuration for ansible
 
 `roles` - Directory containing **roles**. Roles used to group a set of **tasks**, similar to classes in programming.
 
 ## Tips
-always check [Ansible Galaxy](https://galaxy.ansible.com/) for existing roles, there is a lot of stuff people already wrote so you don't have to reinvent the wheel.
+Always check [Ansible Galaxy](https://galaxy.ansible.com/) for existing roles, there is a lot of stuff people already wrote so you don't have to reinvent the wheel.
