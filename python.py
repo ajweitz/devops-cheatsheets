@@ -64,24 +64,29 @@ dictionaryExample = {
 "Tulip" in listExample
 
 # Strings
-a = "Hello, World!"
+a = "Hello, World!\nLine2"
 b = f"{a} fstring"
 print(a[1])  # string is Array
 len(a)  # size, length
-# some string methods:
+
+# True/False methods:
 a.isalpha()
 a.isdigit()
 a.isnumeric()
 a.islower()
 a.isupper()
+a.startswith("Hell")  # will return True
 
-a.upper()
-a.lower()
-a.replace("this", "with that")
-a.startswith()
-a.splitlines()
-a.split()
+a.upper()  # change all letters to uppercase
+a.lower()  # change all letters to lowercase
+
+a.replace("Hello", "Bye")  # will return: 'Bye, World!\nLine2'
+
+a.split(",")  # will split into array: ['Hello', ' World!\nLine2']
+a.splitlines()  # will split into array: ['Hello, World!', 'Line2']
 a.strip()  # trim spaces
+# finds the first occurrence of the specified value. Will return 7 in this case
+a.find("World")
 ";".join(a)
 
 # Parse JSON
