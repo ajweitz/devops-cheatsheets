@@ -1,1 +1,9 @@
-helm list # lists all installed charts
+# lists all installed charts
+helm list 
+
+# Deploy a chart with helm (needs to be in chart folder):
+helm dependency update # downloading the dependencies
+helm upgrade --install <CHART_NAME> ./ # upgrade/install
+
+# Uninstall a chart with helm:
+helm uninstall <CHART_NAME>
