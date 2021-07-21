@@ -51,8 +51,8 @@ if not arr:
     pass
 
 # List Comprehension
-list = [expression_on_variable_name for variable_name in iterable if some_condition_on_variable_name]
-list = [c.lower() for c in "ABC" if c != 'A']  # will return ['b', 'c']
+arr = [expression_on_variable_name for variable_name in iterable if some_condition_on_variable_name]
+arr = [c.lower() for c in "ABC" if c != 'A']  # will return ['b', 'c']
 squares = [i**2 for i in range(5)]  # will return [0, 1, 4, 9, 16]
 
 
