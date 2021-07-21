@@ -1,0 +1,13 @@
+---
+# Running set of roles on example_host (specified in inventory.ini)
+- hosts: example_host
+  roles:
+    # Running a role
+    - example
+    # in case you want to run a role with variables:
+    - role: example
+      x: "{{  var_from_cli  }}"
+      y: "{{  var_from_group_vars  }}"
+    
+    
+    

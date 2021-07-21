@@ -1,0 +1,14 @@
+---  
+
+- name: Download a file to Playbook directory on localhost
+  get_url:
+      url: http://example.com/somefile.jar
+      dest: "{{ playbook_dir }}/somefile.jar"
+      mode: '0755'
+      force: no
+  delegate_to: localhost
+
+- name: Execute helper script
+  script: "some_helper_script.py '{{ my_name }}'"
+
+
