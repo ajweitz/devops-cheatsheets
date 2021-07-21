@@ -1,0 +1,18 @@
+# for more example check out: https://galaxy.ansible.com/docs/using/installing.html#dependencies
+# To install roles from this file, run:  ansible-galaxy install -r requirements.yml
+
+# from galaxy (https://galaxy.ansible.com/)
+- src: yatesr.timezone
+
+# from GitHub
+- src: https://github.com/bennojoy/nginx
+  version: master
+
+# from a webserver
+- src: https://example.com/files/master.tar.gz
+  name: some-role-name
+
+# from GitLab 
+- src: git@gitlab.company.com:mygroup/ansible-base.git
+  scm: git
+  version: "0.1"  # quoted, so YAML doesn't parse this as a floating-point value

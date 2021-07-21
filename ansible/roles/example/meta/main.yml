@@ -1,0 +1,6 @@
+---
+dependencies:
+  - role: some_role_to_run_before_this_one
+    vars:
+      some_parameter: 3
+  - role: another_role_to_run_before_this_one

@@ -1,6 +1,9 @@
 # Installing a role from: https://galaxy.ansible.com/
 ansible-galaxy install <some_galaxy_role>
 
+# Installing roles from a requirements.yml file:
+ansible-galaxy install -r requirements.yml
+
 # Running the playbook-example.yml
 ansible-playbook playbook-example.yml
 
