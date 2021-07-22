@@ -1,0 +1,167 @@
+// We can have some additional imports
+import org.jenkinsci.plugins.workflow.steps.FlowInterruptedException
+import com.cloudbees.groovy.cps.NonCPS
+
+// Defining a var accessible from all stages and functions
+def someGlobalVar = "this is a global var"
+
+// Using a global shared library (use this approach if you wanna share code between Jenkinsfiles)
+// on further information regarding Jenkins Shared Libraries, you can check the docs: https://www.jenkins.io/doc/book/pipeline/shared-libraries/
+@Library('myJenkinsLibrary')_ 
+
+// Definition of the pipeline itself
+pipeline {
+    agent {
+        label 'someLabel' //you can assign label to your jenkins node via Jenkins Administration
+    }
+    // optional
+    parameters {
+        choice(name: 'SOME_CHOICE_PARAM', choices: ['A', 'B', 'C'], description: 'Some Description about param')
+        string(name: 'SOME_STRING_PARAM', defaultValue: "some default value", description: 'Some Description')
+        password(name: 'SOME_PASSWORD_PARAM', defaultValue: "default", description: 'Some Description')
+    }
+    // optional
+    triggers {
+        // cron('H 23 * * 0-5') // you can use this if you don't have any parameters
+
+        // running at ~12 and ~21 every day except weekends, this trigger is only for master branch
+        parameterizedCron(env.BRANCH_NAME == 'master' ? '''
+            H 12 * * 0-5 %SOME_CHOICE_PARAM='B'
+            H 21 * * 0-5 %SOME_STRING_PARAM='some value'
+        ''' : '')
+    }
+    // optional
+    options {
+        timeout(time: 5, unit: 'HOURS') // this job can run 5 hours max
+    }
+    // optional
+    environment {
+        SOME_ENV_VAR = "some value"
+        ANOTHER_ENV_VAR = "another value"
+    }
+    // required
+    stages {
+        stage('Examples') {
+            steps {
+                script {
+
+                    // Accessing parameters
+                    echo "TimeStamp: ${currentBuild.startTimeInMillis}" //print timestamp
+                    echo "our env var: ${SOME_ENV_VAR}" // print the env var we defined
+                    echo "our param: ${SOME_CHOICE_PARAM}" // print the value of parameter SOME_CHOICE_PARAM
+                    echo "build number: $BUILD_NUMBER" // print Build Number
+                    echo "build status: $BUILD_STATUS" // print Build Status
+
+                    // Stopping the execution of the job with an error
+                    error "This will stop the job and show this error"
+                    def startedBy = someLib.getStartedByUser()
+
+                    // Setting a description for this job (can be helpful for showing users some info about this build)
+                    currentBuild.description = "Started by: John"
+
+                    // Sending an email
+                    // More information: https://plugins.jenkins.io/email-ext/
+                    emailext body: ('${FILE,path="email_template.html"}'), // this will read the file email_template.html and set the body parameter with its content
+                    to: "john@example.com, devteam@example.com",
+                    subject: 'some title',
+                    mimeType: 'text/html'
+
+                    // Calling a function
+                    someLocalFunction() // Calling a local function from the same Jenkinsfile
+
+                    // Calling a function from someLib.groovy file
+                    def someLib = load "someLib.groovy" // loading the file
+                    someLib.anotherLibFunction() // calling a function from the file
+
+                    // Calling a function from a global shared library
+                    // Read docs: https://www.jenkins.io/doc/book/pipeline/shared-libraries/
+                    // This requires setting up a Jenkins Library Git Repository
+                    // Note: we wrote @Library('myJenkinsLibrary')_ at the begining of the Jenkinsfile to include the libraries
+                    // Additional Note: this is the recommended way of sharing code between multiple Jenkinsfiles
+                    JenkinsLibFilename.functionInsideFile("x","y") // Assuming we have a file vars/JenkinsLibFilename and a function functionInsideFile inside it
+
+
+                    // try-catch-finally
+                    try {
+                        echo "this will be caught be catch in case it fails"
+                    }
+                    catch(error){
+                        echo("The error caught: ${error}")
+                    }
+                    finally {
+                        echo "this will always run"
+                    }
+
+                    // conditions
+                    if (true && !false){
+                        echo("will print if statement is true")
+                    }else{
+                        echo("will print if statement is false")
+                    } 
+
+                    // Loops
+                    //for-each
+                    someList = [1,2,3]
+                    someList.each {
+                        echo "number ${it}" // "it" is a reserved word
+                    }
+
+                    // Running shell commands
+                    sh("ls -a") // run a shell command on linux
+                    bat("dir /AD") // run a shell (batch) command on windows
+                    // Determining which os we run on and run a shell command accordingly
+                    if (isUnix()){
+                        sh("ls")
+                    }else{
+                        bat("dir")
+                    }
+
+                    // Getting the output from shell commands
+
+                    def exampleCommand = "echo hello world" 
+                    
+                    // Getting the output of a linux command
+                    def linuxCommandOutput =  sh(returnStdout:true , script: '#!/bin/sh -e\n' + exampleCommand).trim()
+
+                    // Getthing the output of a windows batch command
+                    def windowsCommandOutput = bat(returnStdout:true , script: exampleCommand).trim().readLines().drop(1).join(" ")
+         
+
+                }
+            }
+        }
+        stage ('Another stage') {
+            //We can use when to set a condition on when to run a stage
+            when {
+                branch 'master'
+            }
+            steps {
+                script {
+                    echo "this stage will only run on master branch"
+                }
+            }
+        }
+    }
+    post {
+        always {
+            script {
+                echo "this will always run at the end of the job"
+            }
+        }
+        success {
+            script{
+                echo "this will run if the job succeeded"
+            }
+        }
+        failure {
+            script {
+                echo "this will run if the job failed"
+                
+            }
+        }
+    }
+}
+
+def someLocalFunction(){
+    echo "function inside Jenkinsfile"
+}
