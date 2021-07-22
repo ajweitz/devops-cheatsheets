@@ -182,7 +182,8 @@ for n in range(0, 9):
 # MATH
 ######
 # requires import math
-math.floor(x)  # floor
+math.floor(2.3)  # floor
+math.ceil(1.4) # ceil
 x ** 3  # x^3
 7 // 2  # floor divide, returns 3
 -x  # changed sign of x
