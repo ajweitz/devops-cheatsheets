@@ -181,15 +181,21 @@ for n in range(0, 9):
 ######
 # MATH
 ######
-# requires import math
-math.floor(2.3)  # floor
-math.ceil(1.4) # ceil
+# built-in arithmetics
 x ** 3  # x^3
 7 // 2  # floor divide, returns 3
 -x  # changed sign of x
 4 % 3  # modulo, returns 1
 min()  # It is used to find the minimum value out of multiple values.
 max()  # It is used to find the maximum value out of multiple values.
+
+# Math Lib functions
+# requires import math
+math.floor(2.3)  # floor
+math.ceil(1.4) # ceil
+3 < math.inf # inifity
+-2 > -math.inf # negative infinity
+
 
 ########
 # REGEXP
