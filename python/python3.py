@@ -10,12 +10,10 @@ import json
 #########
 # GENERAL
 #########
-print()  # It is used to display anything on the console.
-# It is used to find the length of a string, list, tuple, dictionary, etc.
-len()
+print()  # display anything on the console.
+len() # find the length of a string, list, tuple, dictionary, etc.
 type()  # It tells about the data type of a variable.
-# It confirms if a variable is of xyz type. For example, if 5 is int? This function returns True if yes.
-isinstance()
+isinstance() # It confirms if a variable is of xyz type. For example, if 5 is int? This function returns True if yes.
 z = int("3")  # cast string into integer
 
 
@@ -27,13 +25,13 @@ arr2 = list("hello")  # will create array ['h','e','l','l','o']
 len(arr)  # array length
 arr.append("orange")  # adds to end of list
 arr.insert(1, "orange")  # insert in index
-arr.pop(1)
-arr.pop()
+arr.pop(1) # pop a value on given index. Will return "Jasmine" and remove her from the list
+arr.pop() # pop right most item. Will return "Daisy" and remove her from list
 del arr[0]  # remove specific index
 arr.remove("Tulip")  # remove specific value from the array
-print(arr[-1])  # accessing last item
-print(arr[2:5])  # range, note that it does not include 5
-print(arr[2:len(arr)])  # range from 2 to last item
+arr[-1] # accessing last item
+arr[1:4]  # range, will return ['Jasmine', 'Rose', 'Lili']
+arr[2:] # range from 2 to last item. Will return ['Jasmine', 'Rose', 'Lili', 'Daisy']
 arr.sort()  # sort list
 arr = arr + arr2  # combine lists
 arr.reverse()  # reverse list
@@ -42,18 +40,32 @@ arr.index("Jasmine")
 
 "Tulip" in arr  # if
 # pythonic way to check if a list is empty or not
-# check if list is not  empty
+# check if list is not  empty (same as if len(arr) != 0)
 if arr:
     pass
 
-# check if list is empty
+# check if list is empty (same as if len(arr) == 0)
 if not arr:
     pass
 
-# List Comprehension
+# List Comprehension, quick way to a list/dict out of a list/dict based on a condition
 arr = [expression_on_variable_name for variable_name in iterable if some_condition_on_variable_name]
 arr = [c.lower() for c in "ABC" if c != 'A']  # will return ['b', 'c']
 squares = [i**2 for i in range(5)]  # will return [0, 1, 4, 9, 16]
+
+
+############
+# DICTIONARY
+############
+# aka hashtable aka map
+dictionaryExample = {
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3",
+    "key4": "value4",
+}
+dictionaryExample["key"] = "value"  # set a key to value
+"key" in dictionaryExample  # returns True if key is in the dictionary
 
 
 #######
@@ -74,20 +86,6 @@ tupleExample = ("one", "two", "three")
 
 
 ############
-# DICTIONARY
-############
-# aka hashtable aka map
-dictionaryExample = {
-    "key1": "value1",
-    "key2": "value2",
-    "key3": "value3",
-    "key4": "value4",
-}
-dictionaryExample["key"] = "value"  # set a key to value
-"key" in dictionaryExample  # returns True if key is in the dictionary
-
-
-############
 # STRINGS
 ############
 str = "Hello, World!\nLine2"
@@ -96,24 +94,22 @@ print(str[1])  # string is Array
 len(str)  # size, length
 
 # True/False methods:
-str.isalpha()
-str.isdigit()
-str.isnumeric()
-str.islower()
-str.isupper()
-str.startswith("Hell")  # will return True
+str.isalpha() # returns True if all characters are A-z
+str.isdigit() # returns True if all characters are [0-9]
+str.isnumeric() # returns True if all characters are [0-9] OR Chinese/Arabic numerals
+str.islower() # returns True if all characters lowercase
+str.isupper() # returns True if all characters uppercase
+str.startswith("Hell")  # returns True if starts with given string
 
 str.upper()  # change all letters to uppercase
 str.lower()  # change all letters to lowercase
 
 str.replace("Hello", "Bye")  # will return: 'Bye, World!\nLine2'
-
+";".join(["a","b","c"]) # join, returns "a;b;c"
 str.split(",")  # will split into array: ['Hello', ' World!\nLine2']
 str.splitlines()  # will split into array: ['Hello, World!', 'Line2']
-str.strip()  # trim spaces
-# finds the first occurrence of the specified value. Will return 7 in this case
-str.find("World")
-";".join(a)
+str.strip()  # trim spaces (remove whitespaces from the start and end of a string)
+str.find("World") # finds the first occurrence of the specified value. Will return 7 in this case
 
 
 #######
@@ -138,7 +134,7 @@ f.close()
 ######
 # requires import json
 str = '{ "name":"John", "age":30, "city":"New York"}'
-pythonObject = json.loads(str)
+pythonObject = json.loads(str) # create an object out of a JSON string
 
 
 ######
@@ -186,8 +182,8 @@ x ** 3  # x^3
 7 // 2  # floor divide, returns 3
 -x  # changed sign of x
 4 % 3  # modulo, returns 1
-min()  # It is used to find the minimum value out of multiple values.
-max()  # It is used to find the maximum value out of multiple values.
+min()  # find the minimum value out of multiple values.
+max()  # find the maximum value out of multiple values.
 
 # Math Lib functions
 # requires import math
@@ -203,8 +199,7 @@ math.ceil(1.4) # ceil
 # regexp (regular expression)
 # requires import re
 
-# use r for python RAW string when you want to escape \ in regexp
-p = re.compile(r"\\")
+p = re.compile(r"\\") # use r for python RAW string when you want to escape \ in regexp
 p = re.compile('[a-z]+')  # first we need to compile our regexp
 m = p.match("adasd+blabla")  # match the string with the expression we compiled
 
