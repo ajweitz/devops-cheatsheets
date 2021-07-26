@@ -2,7 +2,7 @@
 history # show all previous commands
 clear # clear terminal
 pwd # show current directory
-
+env # show environment variables
 
 # cd
 cd .. # go back one level
@@ -48,12 +48,17 @@ find -type d -name myDir # look for directories
 
 # sed
 
-# du (check spack of a particular file or folder)
+# du (check space of a particular file or folder)
 
 # df (check disk space)
 
 # diff (compare 2 files)
 diff file1 file2
+
+# cut (get fixed amount of characters from every line of text)
+ll | cut -c 1 # will get the 1st character of every line of the command ll
+ll | cut -c 2-4 # will get the 2nd, 3rd and 4th character of every line of the command ll
+ll | cut -f 2 -d ' ' # will get the 2nd element of every line, using whitespace as a delimeter
 
 # chmod
 
