@@ -3,6 +3,8 @@ history # show all previous commands
 clear # clear terminal
 pwd # show current directory
 env # show environment variables
+ls /var/log/syslog | head # show the first few lines from a given output
+ls /var/log/syslog | tail # show the last few lines from a given output
 
 # cd
 cd .. # go back one level
