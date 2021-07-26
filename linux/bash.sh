@@ -78,3 +78,5 @@ ll | cut -f 2 -d ' ' # will get the 2nd element of every line, using whitespace 
 ## Bash Scripting
 # vars
 x=$(echo "hello world") # assign output of echo command to var x
+# loops
+cat file.txt | while read line; do echo $line; done # basically: for line in file.txt. iterating through each line of output (one-liner)
