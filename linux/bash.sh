@@ -107,6 +107,15 @@ wc file.txt # count the number of words in a file
 wc -l file.txt # count the number of lines in a file
 wc -c file.txt # count the number of bytes in a file
 
+# useradd (Adding a user)
+sudo useradd someuser
+
+# userdel (Deleting a user)
+sudo del someuser
+
+# changing a user password
+passwd someuser
+
 ## Bash Scripting
 # vars
 x=$(echo "hello world") # assign output of echo command to var x
