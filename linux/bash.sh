@@ -74,6 +74,11 @@ paste -s file.txt # combine all lines in files into one, seperated by TAB
 paste -s file.txt -d ';' # combine all lines in files into one, seperated by ;
 ll | paste -s -d ' ' # combine all lines from ll command into one, seperated by whitespace
 
+# sort (sort lines)
+sort file1.txt # sort lines in a file
+ll | sort  # sort lines from output
+sort -r file.txt # sort and reverse lines in file
+
 # chmod
 
 # chown
