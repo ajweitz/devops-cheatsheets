@@ -29,6 +29,14 @@ mkdir -p foo/bar/some/more/dirs # create dir+subdirs
 rm filename.txt # remove file
 rm -rf exampledir # remove a directory without promting for confirmation
 
+# redirecting stdout and stderr
+echo hello world > file.txt # redirecting stdout of echo to the file.txt
+echo hello world >> file.txt # appending stdout of echo to the file.txt
+ls /fake/dir 2 > file.txt # redirecting stderr of ls to the file.txt
+ls /fake/dir > file.txt 2>&1 # redirecting both stdout and stderr of ls to the file.txt
+ls /fake/dir &> file.txt # shorter way of doing the above
+ls /fake/dir 2> /dev/null # redirect stderr to null pointer (this will simply not show stderr in the console)
+
 # find
 find /home/ -name notes.txt # find files in /home/
 find . -name notes.txt # find files in the current directory use, 
