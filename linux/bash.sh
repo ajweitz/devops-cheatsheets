@@ -60,6 +60,11 @@ ll | cut -c 1 # will get the 1st character of every line of the command ll
 ll | cut -c 2-4 # will get the 2nd, 3rd and 4th character of every line of the command ll
 ll | cut -f 2 -d ' ' # will get the 2nd element of every line, using whitespace as a delimeter
 
+# paste
+paste -s file.txt # combine all lines in files into one, seperated by TAB
+paste -s file.txt -d ';' # combine all lines in files into one, seperated by ;
+ll | paste -s -d ' ' # combine all lines from ll command into one, seperated by whitespace
+
 # chmod
 
 # chown
