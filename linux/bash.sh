@@ -85,6 +85,11 @@ uniq -c file.txt # show only the unique lines. Add a counter for each of the occ
 uniq -u file.txt # show only the lines that appear once
 uniq -d file.txt # show only the duplicated lines
 
+# wc (count lines/words/bytes in a file)
+wc file.txt # count the number of words in a file
+wc -l file.txt # count the number of lines in a file
+wc -c file.txt # count the number of bytes in a file
+
 # chmod
 
 # chown
