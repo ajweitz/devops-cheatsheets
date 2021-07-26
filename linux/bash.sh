@@ -51,7 +51,10 @@ find /home/ -name notes.txt # find files in /home/
 find . -name notes.txt # find files in the current directory use, 
 find -type d -name myDir # look for directories
 
-# grep
+# grep (finding occurences of strings in files)
+ grep someword file.txt # find all the lines that have someword
+ ll | grep someword # find all the lines that have someword
+ grep someword -i file.txt # find all the lines that have someword, and ignore case (can be SOMEWORD, SoMeWORD, etc...)
 
 # awk
 
