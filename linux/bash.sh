@@ -3,8 +3,15 @@ history # show all previous commands
 clear # clear terminal
 pwd # show current directory
 env # show environment variables
-ls /var/log/syslog | head # show the first few lines from a given output
-ls /var/log/syslog | tail # show the last few lines from a given output
+
+# head/tail
+#head
+ll | head # show the first few lines of ll
+head /var/log/syslog # show first few lines of a given file
+#tail
+ll | tail # show the last few lines of ll
+tail /var/log/syslog # show first few lines of a given file
+tail /var/log/syslog # open and follow changes in file as they happen live
 
 # cd
 cd .. # go back one level
