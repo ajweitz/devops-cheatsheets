@@ -57,6 +57,20 @@ find -type d -name myDir # look for directories
 
 # sed
 
+# chmod
+
+# chown
+
+# wget 
+
+# uname
+
+# history
+
+# netstat
+
+# ps
+
 # du (check space of a particular file or folder)
 
 # df (check disk space)
@@ -89,21 +103,6 @@ uniq -d file.txt # show only the duplicated lines
 wc file.txt # count the number of words in a file
 wc -l file.txt # count the number of lines in a file
 wc -c file.txt # count the number of bytes in a file
-
-# chmod
-
-# chown
-
-# wget 
-
-# uname
-
-# history
-
-# netstat
-
-# ps
-
 
 ## Bash Scripting
 # vars
