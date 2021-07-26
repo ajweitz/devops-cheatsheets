@@ -79,6 +79,12 @@ sort file1.txt # sort lines in a file
 ll | sort  # sort lines from output
 sort -r file.txt # sort and reverse lines in file
 
+# uniq (find unique lines)
+uniq file.txt # show only the unique lines in a file
+uniq -c file.txt # show only the unique lines. Add a counter for each of the occurences of a line
+uniq -u file.txt # show only the lines that appear once
+uniq -d file.txt # show only the duplicated lines
+
 # chmod
 
 # chown
