@@ -105,6 +105,10 @@ pipeline {
                     someList.each {
                         echo "number ${it}" // "it" is a reserved word
                     }
+                    // same as the above
+                    someList.each { element ->
+                        echo "number ${element}" 
+                    }
 
                     // Running shell commands
                     sh("ls -a") // run a shell command on linux
