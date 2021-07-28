@@ -129,7 +129,10 @@ pipeline {
 
                     // Getthing the output of a windows batch command
                     def windowsCommandOutput = bat(returnStdout:true , script: exampleCommand).trim().readLines().drop(1).join(" ")
-         
+
+                    // Working with files:
+                    def files = findFiles() // getting a list of files
+                    def files = findFiles(glob: '*.jar') // getting a lift of file with the .jar suffix
 
                 }
             }
