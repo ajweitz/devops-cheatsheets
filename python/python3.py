@@ -11,7 +11,6 @@ from collections import OrderedDict as odict # import a class from the library, 
 od = odict() # Create an OrderedDict object
 
 
-
 #########
 # GENERAL
 #########
@@ -42,8 +41,7 @@ arr[2:] # range from 2 to last item. Will return ['Jasmine', 'Rose', 'Lili', 'Da
 arr.sort()  # sort list
 arr = arr + arr2  # combine lists
 arr.reverse()  # reverse list
-# findining at what index we have a value, returns 1
-arr.index("Jasmine")
+arr.index("Jasmine") # findining at what index we have a value, returns 1
 
 "Tulip" in arr  # if
 # pythonic way to check if a list is empty or not
@@ -87,9 +85,10 @@ dq.popleft() # pop element from the queue (this will pop "a")
 dq.pop() # pop element from right (if you wanna use dq as a stack)
  
 
-######
+#####
 # SET
-######
+#####
+# Set is like a dictionary but without keys, useful if you wanna keep a list of elements without duplicates
 setExample = set()  # empty set
 setExample = {"apple", "banana", "cherry"}
 setExample.add("orange")
@@ -164,9 +163,9 @@ copy.copy(pythonObject)  # Return a shallow copy of x onject.
 copy.deepcopy(pythonObject)  # Return a deep copy x object
 
 
-########
-# Loops
-########
+#######
+# LOOPS
+#######
 # while loop
 i = 0
 while i < 6:
