@@ -1,10 +1,15 @@
 #########
 # IMPORTS
 #########
-import re
-import math
-import copy
-import json
+import collections # import a library
+od = collections.OrderedDict() # Create an OrderedDict object
+
+from collections import OrderedDict # import a class from the library
+od = OrderedDict() # Create an OrderedDict object
+
+from collections import OrderedDict as odict # import a class from the library, and give it an alias
+od = odict() # Create an OrderedDict object
+
 
 
 #########
@@ -20,6 +25,8 @@ z = int("3")  # cast string into integer
 #######
 # LISTS
 #######
+# Lists can be also used as a stack, with append and pop methods.
+# For queues, go to the QUEUE section.
 arr = ["Tulip", "Jasmine", "Rose", "Lili", "Daisy"]
 arr2 = list("hello")  # will create array ['h','e','l','l','o']
 len(arr)  # array length
@@ -69,8 +76,20 @@ dictionaryExample["key"] = "value"  # set a key to value
 
 
 #######
-# SETS
+# QUEUE
 #######
+# deque operate as both queue and stack, depending on the function you use to "pop"
+from collections import deque
+dq = deque() # create an empty deque
+dq = deque(["a",2,"c"]) # create a deque with elements
+dq.append("d") # add element to the queue
+dq.popleft() # pop element from the queue (this will pop "a")
+dq.pop() # pop element from right (if you wanna use dq as a stack)
+ 
+
+######
+# SET
+######
 setExample = set()  # empty set
 setExample = {"apple", "banana", "cherry"}
 setExample.add("orange")
@@ -79,15 +98,15 @@ setExample.remove("banana")
 
 
 #######
-# TUPLES
+# TUPLE
 #######
 # can be accessed like arrays, but cannot be modified
 tupleExample = ("one", "two", "three")
 
 
-############
-# STRINGS
-############
+########
+# STRING
+########
 str = "Hello, World!\nLine2"
 str2 = f"{str} fstring"
 print(str[1])  # string is Array
@@ -132,7 +151,7 @@ f.close()
 ######
 # JSON
 ######
-# requires import json
+import json
 str = '{ "name":"John", "age":30, "city":"New York"}'
 pythonObject = json.loads(str) # create an object out of a JSON string
 
@@ -140,7 +159,7 @@ pythonObject = json.loads(str) # create an object out of a JSON string
 ######
 # COPY
 ######
-# requires import copy
+import copy
 copy.copy(pythonObject)  # Return a shallow copy of x onject.
 copy.deepcopy(pythonObject)  # Return a deep copy x object
 
@@ -186,7 +205,7 @@ min()  # find the minimum value out of multiple values.
 max()  # find the maximum value out of multiple values.
 
 # Math Lib functions
-# requires import math
+import math
 math.floor(2.3)  # floor
 math.ceil(1.4) # ceil
 3 < math.inf # inifity
@@ -197,8 +216,8 @@ math.ceil(1.4) # ceil
 # REGEXP
 ########
 # regexp (regular expression)
-# requires import re
 
+import re
 p = re.compile(r"\\") # use r for python RAW string when you want to escape \ in regexp
 p = re.compile('[a-z]+')  # first we need to compile our regexp
 m = p.match("adasd+blabla")  # match the string with the expression we compiled
