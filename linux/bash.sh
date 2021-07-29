@@ -61,6 +61,7 @@ find -type d -name myDir # look for directories
 # sed
 
 # chmod
+chmod 744 file.txt # set rwx (owner) rw- (group) rw- (other users) permissions to the file.txt
 
 # chown
 
