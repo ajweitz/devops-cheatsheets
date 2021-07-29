@@ -134,6 +134,8 @@ pipeline {
                     def files = findFiles() // getting a list of files
                     def files = findFiles(glob: '*.jar') // getting a lift of file with the .jar suffix
 
+                    fileOperations([fileCreateOperation(fileContent: "Content of file here", fileName: "somefile.txt")]) // Creating a file with content
+
                 }
             }
         }
