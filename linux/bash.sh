@@ -1,18 +1,16 @@
-# General Commands
+#########
+# GENERAL
+#########
 history # show all previous commands
 clear # clear terminal
 pwd # show current directory
 env # show environment variables
+date # gives you current datetime
 
-# head/tail
-#head
-ll | head # show the first few lines of ll
-head /var/log/syslog # show first few lines of a given file
-#tail
-ll | tail # show the last few lines of ll
-tail /var/log/syslog # show first few lines of a given file
-tail /var/log/syslog # open and follow changes in file as they happen live
 
+############
+# NAVIGATION
+############
 # cd
 cd .. # go back one level
 cd - # go to previous dir
@@ -21,6 +19,9 @@ cd - # go to previous dir
 ls -R # list all the files in the sub-directories as well
 ls -a # show the hidden files
 ls -al # list the files and directories with detailed information like the permissions, size, owner, etc.
+
+# touch
+touch somefile.txt # create empty somefile.txt file
 
 # cp
 cp filename.txt /home/myuser # copy filename.txt to /home/myuser
@@ -38,6 +39,15 @@ mkdir -p foo/bar/some/more/dirs # create dir+subdirs
 rm filename.txt # remove file
 rm -rf exampledir # remove a directory without promting for confirmation
 
+# find
+find /home/ -name notes.txt # find files in /home/
+find . -name notes.txt # find files in the current directory use, 
+find -type d -name myDir # look for directories
+
+###################
+# TEXT MANIPULATION
+###################
+
 # redirecting stdout and stderr
 echo hello world > file.txt # redirecting stdout of echo to the file.txt
 echo hello world >> file.txt # appending stdout of echo to the file.txt
@@ -45,11 +55,6 @@ ls /fake/dir 2 > file.txt # redirecting stderr of ls to the file.txt
 ls /fake/dir > file.txt 2>&1 # redirecting both stdout and stderr of ls to the file.txt
 ls /fake/dir &> file.txt # shorter way of doing the above
 ls /fake/dir 2> /dev/null # redirect stderr to null pointer (this will simply not show stderr in the console)
-
-# find
-find /home/ -name notes.txt # find files in /home/
-find . -name notes.txt # find files in the current directory use, 
-find -type d -name myDir # look for directories
 
 # grep (finding occurences of strings in files)
  grep someword file.txt # find all the lines that have someword
@@ -61,28 +66,14 @@ find -type d -name myDir # look for directories
 
 # sed
 
-# chmod
-chmod 744 file.txt # set rwx (owner) rw- (group) rw- (other users) permissions to the file.txt
-
-# chown
-sudo chown someuser file.txt # set owner to a file
-sudo chown someuser:somegroup file.text # set owner + owner group to a file
-# chgrp
-sudo chgrp somegroup file.txt # set owner group to a file
-
-# wget 
-
-# uname
-
-# history
-
-# netstat
-
-# ps
-
-# du (check space of a particular file or folder)
-
-# df (check disk space)
+# head/tail
+#head
+ll | head # show the first few lines of ll
+head /var/log/syslog # show first few lines of a given file
+#tail
+ll | tail # show the last few lines of ll
+tail /var/log/syslog # show first few lines of a given file
+tail /var/log/syslog # open and follow changes in file as they happen live
 
 # diff (compare 2 files)
 diff file1 file2
@@ -113,6 +104,18 @@ wc file.txt # count the number of words in a file
 wc -l file.txt # count the number of lines in a file
 wc -c file.txt # count the number of bytes in a file
 
+#############
+# PERMISSIONS
+#############
+# chmod
+chmod 744 file.txt # set rwx (owner) rw- (group) rw- (other users) permissions to the file.txt
+
+# chown
+sudo chown someuser file.txt # set owner to a file
+sudo chown someuser:somegroup file.text # set owner + owner group to a file
+# chgrp
+sudo chgrp somegroup file.txt # set owner group to a file
+
 # useradd (Adding a user)
 sudo useradd someuser
 
@@ -122,7 +125,29 @@ sudo del someuser
 # changing a user password
 passwd someuser
 
-## Bash Scripting
+############
+# NETWORKING
+############
+
+# wget 
+
+# netstat
+
+################
+# OS INFORMATION
+################
+
+# ps
+
+# du (check space of a particular file or folder)
+
+# df (check disk space)
+
+# uname
+
+###########
+# SCRIPTING
+###########
 # vars
 x=$(echo "hello world") # assign output of echo command to var x
 # loops
