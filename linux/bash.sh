@@ -54,6 +54,7 @@ find -type d -name myDir # look for directories
 # grep (finding occurences of strings in files)
  grep someword file.txt # find all the lines that have someword
  ll | grep someword # find all the lines that have someword
+ someerror 2> >(grep someword) # redirect stder to grep
  grep someword -i file.txt # find all the lines that have someword, and ignore case (can be SOMEWORD, SoMeWORD, etc...)
 
 # awk
