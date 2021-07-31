@@ -140,6 +140,10 @@ passwd someuser
 ################
 
 # ps
+ps # show user's processes
+ps a  # show processes by other users as well
+ps ax # show all processes, including daemons
+ps aux # show all processes, with additional details
 
 # du (check space of a particular file or folder)
 
