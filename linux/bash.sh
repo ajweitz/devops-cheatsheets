@@ -7,6 +7,8 @@ pwd # show current directory
 env # show environment variables
 date # gives you current datetime
 
+# watch
+watch date # runs the command every 2 seconds and tracks the output. Useful when you want to track changes of a process
 
 ############
 # NAVIGATION
