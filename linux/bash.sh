@@ -64,6 +64,10 @@ find -type d -name myDir # look for directories
 chmod 744 file.txt # set rwx (owner) rw- (group) rw- (other users) permissions to the file.txt
 
 # chown
+sudo chown someuser file.txt # set owner to a file
+sudo chown someuser:somegroup file.text # set owner + owner group to a file
+# chgrp
+sudo chgrp somegroup file.txt # set owner group to a file
 
 # wget 
 
