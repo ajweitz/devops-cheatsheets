@@ -152,6 +152,7 @@ passwd someuser
 ###########
 # vars
 x=$(echo "hello world") # assign output of echo command to var x
+echo hello $(echo "world") # command inside $() will be executed and substituted with the output it generates. The output of this will be: hello world
 
 # loops
 cat file.txt | while read line; do echo $line; done # basically: for line in file.txt. iterating through each line of output (one-liner)
