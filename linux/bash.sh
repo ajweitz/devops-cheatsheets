@@ -145,6 +145,9 @@ ps a  # show processes by other users as well
 ps ax # show all processes, including daemons
 ps aux # show all processes, with additional details
 
+# top
+top # show all processes in real time, task manager style
+
 # du (check space of a particular file or folder)
 
 # df (check disk space)
