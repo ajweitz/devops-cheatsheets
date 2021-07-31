@@ -152,5 +152,12 @@ passwd someuser
 ###########
 # vars
 x=$(echo "hello world") # assign output of echo command to var x
+
 # loops
 cat file.txt | while read line; do echo $line; done # basically: for line in file.txt. iterating through each line of output (one-liner)
+
+# || OR
+command1 || command2 || command3 # Will execute commands in order, only if previous command FAILED. will return 0 if at least 1 command was successful
+
+# && AND
+command1 && command2 && command3 # Will execute commands in order, only if previous was succesful
