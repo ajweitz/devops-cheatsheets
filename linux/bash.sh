@@ -149,6 +149,7 @@ ps -eo pid,ppid,ni,comm # show process information with niceness
 # kill
 kill 123 # kill a process based on pid. Will send a SIGTERM (kill gracefully)
 kill 123 -9 # kill the process right away, will send a SIGKILL (force kill)
+kill %1 # kill a background job, look in JOBS section for more info about jobs
 
 # top
 top # show all processes in real time, task manager style
@@ -167,6 +168,17 @@ sudo nice -20 somecommand # run a command with high priority (high niceness), on
 # renice
 renice 20 -p 123 # change the priority (niceness) to low, for a process based on pid
 sudo renice -20 -p 123 # change the priority (niceness) to high
+
+######
+# JOBS (running a process in the background)
+######
+# &
+somecommand & # Running process in the background, in a job
+# jobs
+jobs # show jobs you run in the background
+# fg 
+fg # bring back a job under your control
+fg %2 # bring back a specific job (based on id of what jobs command shows you) 
 
 ###########
 # SCRIPTING
