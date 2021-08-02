@@ -135,6 +135,9 @@ passwd someuser
 
 # netstat
 
+# traceroute
+traceroute google.com # print the network path to a given host
+
 ################
 # SYSTEM
 ################
