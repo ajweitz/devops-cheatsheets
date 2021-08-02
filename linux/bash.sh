@@ -136,7 +136,7 @@ passwd someuser
 # netstat
 
 ################
-# OS INFORMATION
+# SYSTEM
 ################
 
 # ps
@@ -144,6 +144,11 @@ ps # show user's processes
 ps a  # show processes by other users as well
 ps ax # show all processes, including daemons
 ps aux # show all processes, with additional details
+ps -eo pid,ppid,ni,comm # show process information with niceness
+
+# kill
+kill 123 # kill a process based on pid. Will send a SIGTERM (kill gracefully)
+kill 123 -9 # kill the process right away, will send a SIGKILL (force kill)
 
 # top
 top # show all processes in real time, task manager style
@@ -153,6 +158,15 @@ top # show all processes in real time, task manager style
 # df (check disk space)
 
 # uname
+
+# nice
+# niceness values are from -20 to 19
+nice -n 20 somecommand # run a command with low priority (low niceness)
+sudo nice -20 somecommand # run a command with high priority (high niceness), only allowed by root
+
+# renice
+renice 20 -p 123 # change the priority (niceness) to low, for a process based on pid
+sudo renice -20 -p 123 # change the priority (niceness) to high
 
 ###########
 # SCRIPTING
