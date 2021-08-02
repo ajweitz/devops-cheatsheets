@@ -7,7 +7,7 @@
 ### Commonly Used Files
 - `/etc/passwd` - provides information about users
 - `/etc/shadow` - information about user password, the passwords are encrypted
-
+- `/proc` - process information, you will see currently running processes as folders
 
 ## Files and Permissions
 When you run `ll` you are going to see a list of files/directories with something like this `drwxr-xr-x` in the beggining of each line.
