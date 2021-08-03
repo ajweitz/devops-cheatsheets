@@ -175,13 +175,26 @@ sudo renice -20 -p 123 # change the priority (niceness) to high
 ######
 # JOBS (running a process in the background)
 ######
+
 # &
 somecommand & # Running process in the background, in a job
 # jobs
 jobs # show jobs you run in the background
 # fg 
 fg # bring back a job under your control
-fg %2 # bring back a specific job (based on id of what jobs command shows you) 
+fg %2 # bring back a specific job (based on id of what jobs command shows you)
+
+
+###########
+# PACKAGING
+###########
+
+# tar
+tar cvf sometarfile.tar somefileA somefileB # create a tar file
+tar cvf sometarfile.tar *.txt # create a tar from all the *.txt files
+tar xvf sometarfile.tar # extract a tar file
+tar czf sometarfile.tar.gz somefileA somefileB # create a tar file compressed with gunzip
+tar xzf sometarfile.tar.gz # uncompress gunzip, then extract the tar
 
 ###########
 # SCRIPTING
