@@ -1,6 +1,7 @@
 #########
 # GENERAL
 #########
+
 history # show all previous commands
 clear # clear terminal
 pwd # show current directory
@@ -10,9 +11,11 @@ date # gives you current datetime
 # watch
 watch date # runs the command every 2 seconds and tracks the output. Useful when you want to track changes of a process
 
+
 ############
 # NAVIGATION
 ############
+
 # cd
 cd .. # go back one level
 cd - # go to previous dir
@@ -45,6 +48,7 @@ rm -rf exampledir # remove a directory without promting for confirmation
 find /home/ -name notes.txt # find files in /home/
 find . -name notes.txt # find files in the current directory use, 
 find -type d -name myDir # look for directories
+
 
 ###################
 # TEXT MANIPULATION
@@ -106,9 +110,11 @@ wc file.txt # count the number of words in a file
 wc -l file.txt # count the number of lines in a file
 wc -c file.txt # count the number of bytes in a file
 
+
 #############
 # PERMISSIONS
 #############
+
 # chmod
 chmod 744 file.txt # set rwx (owner) rw- (group) rw- (other users) permissions to the file.txt
 chmod ug+w # add w (write) permissions to g (group) and u (other users)
@@ -118,7 +124,6 @@ sudo chmod g+s myfile # add S permission to g (group).
 sudo chmod 2755 myfile # set permissions with S (for group) in numerical format
 sudo chmod +t mydir # adding sticky bit permission. More info on S can be found in README.md
 sudo chmod 1755 mydir # set permissions with sticky bit included in numerical format
-
 
 # chown
 sudo chown someuser file.txt # set owner to a file
@@ -146,9 +151,9 @@ passwd someuser
 # traceroute
 traceroute google.com # print the network path to a given host
 
-################
+########
 # SYSTEM
-################
+########
 
 # ps
 ps # show user's processes
@@ -180,6 +185,7 @@ sudo nice -20 somecommand # run a command with high priority (high niceness), on
 renice 20 -p 123 # change the priority (niceness) to low, for a process based on pid
 sudo renice -20 -p 123 # change the priority (niceness) to high
 
+
 ######
 # JOBS (running a process in the background)
 ######
@@ -204,9 +210,11 @@ tar xvf sometarfile.tar # extract a tar file
 tar czf sometarfile.tar.gz somefileA somefileB # create a tar file compressed with gunzip
 tar xzf sometarfile.tar.gz # uncompress gunzip, then extract the tar
 
+
 ###########
 # SCRIPTING
 ###########
+
 # vars
 x=$(echo "hello world") # assign output of echo command to var x
 echo hello $(echo "world") # command inside $() will be executed and substituted with the output it generates. The output of this will be: hello world
