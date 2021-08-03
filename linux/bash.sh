@@ -203,6 +203,28 @@ fg %2 # bring back a specific job (based on id of what jobs command shows you)
 # PACKAGING
 ###########
 
+# yum (Redhat/CentOS)
+yum install somepackage # Install a package
+yum erase somepackage # delete a package
+yum update # update all installed packages
+yum info somepackage # info about a package
+
+# apt (Debian/Ubuntu)
+apt install somepackage # Install a package
+apt remove somepackage # delete a package
+apt update; apt upgrade # update all installed packages
+apt show somepackage # info about a package
+
+# rpm (Redhat/CentOS)
+rpm -i somepackage.rpm # install a package (without dependencies)
+rpm -e somepackage.rpm # uninstall a package
+rpm -qa # list installed packages
+
+# dpkg (Debian/Ubuntu)
+dpkg -i somepackage.deb # install a package (without dependencies)
+dpkg -r somepackage.deb # uninstall a package
+dpkg -l # list installed packages
+
 # tar
 tar cvf sometarfile.tar somefileA somefileB # create a tar file
 tar cvf sometarfile.tar *.txt # create a tar from all the *.txt files
