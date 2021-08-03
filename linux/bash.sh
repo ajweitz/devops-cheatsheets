@@ -111,6 +111,14 @@ wc -c file.txt # count the number of bytes in a file
 #############
 # chmod
 chmod 744 file.txt # set rwx (owner) rw- (group) rw- (other users) permissions to the file.txt
+chmod ug+w # add w (write) permissions to g (group) and u (other users)
+sudo chmod u+s myfile # add S permission to u (other users). More info on S can be found in README.md
+sudo chmod 4755 myfile # set permissions with S in numerical format
+sudo chmod g+s myfile # add S permission to g (group).
+sudo chmod 2755 myfile # set permissions with S (for group) in numerical format
+sudo chmod +t mydir # adding sticky bit permission. More info on S can be found in README.md
+sudo chmod 1755 mydir # set permissions with sticky bit included in numerical format
+
 
 # chown
 sudo chown someuser file.txt # set owner to a file

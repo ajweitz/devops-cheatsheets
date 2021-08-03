@@ -39,6 +39,9 @@ The next part would be the permissions.
 - `w` : write - digit 2
 - `x` : execute - digit 1
 - `-` : empty
+### Special Permission Types
+- `S` : When a non-owner user will run the program, it will as if the owner is running it (will be either in owner or group section)
+- `t` : sticky bit. This can be added to directories, it means that everyone are allowed to to read/write files, but not delete.
 
 And the permissions are divided into 3 sections:
 1. owner
