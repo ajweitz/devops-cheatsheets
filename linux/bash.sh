@@ -184,6 +184,10 @@ df -i # check how many inodes are available on the system (if you have many smal
 
 # uname
 
+# ln
+ln -s somefile.txt linktosomefile.txt # create a symbolic link (linktosomefile.txt -> somefile.txt)
+ln somefile.txt linktosomefile.txt # create a hard link (this will create an inode link, original file could be renamed or deleted and the link will be kept)
+
 # nice
 # niceness values are from -20 to 19
 nice -n 20 somecommand # run a command with low priority (low niceness)
