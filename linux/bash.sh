@@ -180,6 +180,7 @@ du -hs * # show disk usage of all non-hidden folders in the current directory
 
 # df
 df -h # check disk usage of different partitions (disk size)
+df -i # check how many inodes are available on the system (if you have many small files, you can run out of inodes before running out of space).
 
 # uname
 
