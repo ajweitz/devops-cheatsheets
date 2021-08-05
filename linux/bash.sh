@@ -98,6 +98,8 @@ ll | paste -s -d ' ' # combine all lines from ll command into one, seperated by 
 sort file1.txt # sort lines in a file
 ll | sort  # sort lines from output
 sort -r file.txt # sort and reverse lines in file
+ll | sort -k 3 # sort based on 3rd column
+ll | sort -k 5 -h # -h will make the sort based on numeric values. Can be also written as sort -hk 5
 
 # uniq (find unique lines)
 uniq file.txt # show only the unique lines in a file
@@ -170,9 +172,12 @@ kill %1 # kill a background job, look in JOBS section for more info about jobs
 # top
 top # show all processes in real time, task manager style
 
-# du (check space of a particular file or folder)
+# du 
+du -h # show disk usage of all folders in the current directory (including hidden)
+du -hs * # show disk usage of all non-hidden folders in the current directory
 
-# df (check disk space)
+# df
+df -h # check disk usage of different partitions (disk size)
 
 # uname
 
