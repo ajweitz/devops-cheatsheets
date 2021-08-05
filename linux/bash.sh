@@ -183,6 +183,11 @@ df -h # check disk usage of different partitions (disk size)
 df -i # check how many inodes are available on the system (if you have many small files, you can run out of inodes before running out of space).
 
 # uname
+uname # print the kernel name
+uname -n # print hostname
+uname -o # print the OS
+uname -r # print the kernal release
+
 
 # ln
 ln -s somefile.txt linktosomefile.txt # create a symbolic link (linktosomefile.txt -> somefile.txt)
