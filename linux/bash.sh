@@ -148,6 +148,8 @@ passwd someuser
 
 # wget 
 
+# curl
+
 # netstat
 
 # traceroute
