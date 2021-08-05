@@ -61,7 +61,7 @@ All the signals below can be sent with the `kill` command, an example would be: 
 - `SIGINT` - Sent when you press `Ctrl+C`. The process will attempt to shutdown gracefully.
 - `SIGTERM` - Can be sent with: `kill <proccespid>`. The process will attempt to shutdown gracefully.
 - `SIGKILL` - Can be sent with: `kill -9 <proccespid>` or. Kill the process right away, The kill will be handled by the kernel.
-- `SIGSTOP` - the usual behaviour is to pause that process in its current state. The process will only resume execution if it is sent the `SIGCONT` signal.
+- `SIGSTOP` - Sent when you press `Ctrl+Z`. The usual behaviour is to pause that process in its current state. The process will only resume execution if it is sent the `SIGCONT` signal.
 - `SIGCONT` - Continue a process that was stopped with `SIGSTOP`.
 
 ## Files and Permissions
