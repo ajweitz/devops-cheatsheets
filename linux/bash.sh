@@ -182,16 +182,24 @@ du -hs * # show disk usage of all non-hidden folders in the current directory
 df -h # check disk usage of different partitions (disk size)
 df -i # check how many inodes are available on the system (if you have many small files, you can run out of inodes before running out of space).
 
+# ln
+ln -s somefile.txt linktosomefile.txt # create a symbolic link (linktosomefile.txt -> somefile.txt)
+ln somefile.txt linktosomefile.txt # create a hard link (this will create an inode link, original file could be renamed or deleted and the link will be kept)
+
+# systemctl
+systemctl --type=service # list all services and their state
+systemctl status someservice.service # show information about the service
+sudo systemctl start someservice.service # start the service
+sudo systemctl stop someservice.service # stop the service
+sudo systemctl restart someservice.service # restart the service
+sudo systemctl enable someservice.service # automatically start on boot
+sudo systemctl disable someservice.service # disable start on boot
+
 # uname
 uname # print the kernel name
 uname -n # print hostname
 uname -o # print the OS
 uname -r # print the kernal release
-
-
-# ln
-ln -s somefile.txt linktosomefile.txt # create a symbolic link (linktosomefile.txt -> somefile.txt)
-ln somefile.txt linktosomefile.txt # create a hard link (this will create an inode link, original file could be renamed or deleted and the link will be kept)
 
 # nice
 # niceness values are from -20 to 19
