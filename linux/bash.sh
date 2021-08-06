@@ -142,6 +142,7 @@ sudo del someuser
 # changing a user password
 passwd someuser
 
+
 ############
 # NETWORKING
 ############
@@ -154,6 +155,7 @@ passwd someuser
 
 # traceroute
 traceroute google.com # print the network path to a given host
+
 
 ########
 # SYSTEM
@@ -209,6 +211,13 @@ sudo nice -20 somecommand # run a command with high priority (high niceness), on
 # renice
 renice 20 -p 123 # change the priority (niceness) to low, for a process based on pid
 sudo renice -20 -p 123 # change the priority (niceness) to high
+
+# shutdown
+shutdown now # shutdown right away
+shutdown -h +2 # shutdown in 2 minutes
+
+# reboot
+reboot # restart
 
 
 ######
