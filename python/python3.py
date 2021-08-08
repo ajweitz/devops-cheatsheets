@@ -240,3 +240,12 @@ p.search("325abcd")
 "{m,n}"  # match expression a minimum of m and a maximum of n times
 "*"  # match expression 0 or more times
 "+"  # match expression 1 or more times
+
+
+##########
+# DATETIME
+##########
+import datetime
+datetime.datetime.now() # returns datetime object: datetime.datetime(2021, 8, 8, 9, 49, 44, 773229)
+str(datetime.datetime.now()) # or print() returns the string representation: '2021-08-08 09:49:53.556783'
+datetime.datetime.now().time() # returns the time in hours:minutes:seconds:milliseconds, datetime.time(9, 51, 19, 466522)
