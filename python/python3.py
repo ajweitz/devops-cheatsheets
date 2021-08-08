@@ -153,6 +153,7 @@ f.close()
 import json
 str = '{ "name":"John", "age":30, "city":"New York"}'
 pythonObject = json.loads(str) # create an object out of a JSON string
+json.dumps(pythonObject) # create a JSON string from object
 
 
 ######
