@@ -51,6 +51,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard):
 - `/etc/passwd` - provides information about users
 - `/etc/shadow` - information about user password, the passwords are encrypted
 - `/etc/fstab` - configuration of automatically mounted devices on startup
+- `/proc/cpuinfo` - information about the CPU
 
 ## Processes
 
