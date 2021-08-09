@@ -142,6 +142,9 @@ sudo del someuser
 # changing a user password
 passwd someuser
 
+# user mod
+usermod -a -G somegroup someusername # adding a user to a group
+
 
 ############
 # NETWORKING
