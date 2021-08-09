@@ -204,6 +204,9 @@ uname -n # print hostname
 uname -o # print the OS
 uname -r # print the kernal release
 
+# uptime
+uptime # show you the time that the OS is running for and the load on the CPUs (per 1, 5 and 15 minutes. To convert to %, you need to divide load/CPU_AMOUNT)
+
 # nice
 # niceness values are from -20 to 19
 nice -n 20 somecommand # run a command with low priority (low niceness)
