@@ -210,6 +210,9 @@ uptime # show you the time that the OS is running for and the load on the CPUs (
 # iostat
 iostat # shows information about disk usage and CPUs.
 
+# vmstat
+vmstat # information about memory
+
 # nice
 # niceness values are from -20 to 19
 nice -n 20 somecommand # run a command with low priority (low niceness)
