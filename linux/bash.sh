@@ -164,6 +164,12 @@ scp somefile.txt username@remotehost/remote/directory # copy a file to remote ho
 scp username@remotehost.com:/remote/directory/somefile.txt /local/directory # copy a file from remote host
 scp -r somedir username@remotehost.com:/remote/directory # copy a directory to remote host
 
+# rsync
+rsync -r /some/dir /another/dir # synchronize 2 directories (copy from /some/dir to /another/dir only the files that are missing)
+rsync -zvrh /some/dir /another/dir # sync 2 directories (h - human readable, v - verbose, z - compressed, r - recursive)
+rsync -r somedir username@remotehost.com:/remote/directory # sync a directory to remote host
+rsync -r username@remotehost.com:/remote/directory /local/directory # sync a directory from remote host
+
 
 ########
 # SYSTEM
