@@ -159,6 +159,11 @@ usermod -a -G somegroup someusername # adding a user to a group
 # traceroute
 traceroute google.com # print the network path to a given host
 
+# scp
+scp somefile.txt username@remotehost/remote/directory # copy a file to remote host
+scp username@remotehost.com:/remote/directory/somefile.txt /local/directory # copy a file from remote host
+scp -r somedir username@remotehost.com:/remote/directory # copy a directory to remote host
+
 
 ########
 # SYSTEM
