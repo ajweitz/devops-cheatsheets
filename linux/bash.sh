@@ -191,6 +191,10 @@ kill %1 # kill a background job, look in JOBS section for more info about jobs
 top # show all processes in real time, task manager style
 top -p 123 # track process with pid 123
 
+# free
+free # shows information about memory and swap
+free -h # shows the info in human readable form
+
 # du 
 du -h # show disk usage of all folders in the current directory (including hidden)
 du -hs * # show disk usage of all non-hidden folders in the current directory
