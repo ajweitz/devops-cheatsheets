@@ -13,8 +13,10 @@ kubectl describe pod <POD_NAME>
 # SSH into a pod:
 kubectl exec --stdin --tty <POD_NAME> -- /bin/bash
 
-#Port Forwarding - you can forward a port from your PC directly to a pod in Kubernetes environment:
-kubectl post-forward <POD_NAME> <PORT_NUMBER>
+#Port Forwarding - you can forward a port from your PC directly to a pod/service in Kubernetes environment:
+kubectl port-forward <POD_NAME> <PORT_NUMBER> # port forward to a POD
+kubectl port-forward svc/<SERVICE_NAME> <PORT_NUMBER> # port forward to a SERVICE
+kubectl port-forward deployment/<DEPLOYMENT_NAME> <PORT_NUMBER> # port forward to a DEPLOYMENT
 
 # Get information about our current quota (resources available vs. used):
 kubectl describe quota
