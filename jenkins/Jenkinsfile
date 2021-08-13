@@ -100,9 +100,13 @@ pipeline {
                     } 
 
                     // Loops
-                    //for-each
+                    // for-each
                     someList = [1,2,3]
                     someList.each {
+                        echo "number ${it}" // "it" is a reserved word
+                    }
+                    // alternatively:
+                    [1,2,3].each {
                         echo "number ${it}" // "it" is a reserved word
                     }
                     // same as the above
@@ -136,6 +140,12 @@ pipeline {
 
                     fileOperations([fileCreateOperation(fileContent: "Content of file here", fileName: "somefile.txt")]) // Creating a file with content
 
+                    // Working with JSON
+                    def parsedJson = readJSON file: "somefile.json" // parsin a JSON from a file
+                    def parsedJson = readJSON text: '{"a":"somestr","b":[1,2,3]}' // parsing a JSON from string
+                    parsedJson.a // accessing a, returns "somestr"
+                    parsedJson.b[2] //accessing 3rd element of b array, returns 3
+                    
                 }
             }
         }
