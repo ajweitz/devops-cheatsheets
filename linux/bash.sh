@@ -170,6 +170,9 @@ rsync -zvrh /some/dir /another/dir # sync 2 directories (h - human readable, v -
 rsync -r somedir username@remotehost.com:/remote/directory # sync a directory to remote host
 rsync -r username@remotehost.com:/remote/directory /local/directory # sync a directory from remote host
 
+# dig (DNS lookup utility)
+dig example.com # shows DNS information about resolving the given domain name
+
 
 ########
 # SYSTEM
