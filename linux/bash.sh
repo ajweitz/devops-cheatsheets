@@ -173,6 +173,11 @@ rsync -r username@remotehost.com:/remote/directory /local/directory # sync a dir
 # dig (DNS lookup utility)
 dig example.com # shows DNS information about resolving the given domain name
 
+# arp
+arp -n # view ARP cache
+
+# ip
+ip -s -s neigh flush all # clear ARP cache
 
 ########
 # SYSTEM
