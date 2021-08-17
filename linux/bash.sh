@@ -155,6 +155,10 @@ usermod -a -G somegroup someusername # adding a user to a group
 # curl
 
 # netstat
+netstat # show all the active connections and open ports (bi-directional, TCP+UDP)
+netstat -l # show all the ports we listen to
+netstat -lt # show all the TCP ports we listen to
+netstat -lu # show all the UDP ports we listen to
 
 # traceroute
 traceroute google.com -I # print the network path to a given host
