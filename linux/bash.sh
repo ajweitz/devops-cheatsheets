@@ -157,7 +157,11 @@ usermod -a -G somegroup someusername # adding a user to a group
 # netstat
 
 # traceroute
-traceroute google.com # print the network path to a given host
+traceroute google.com -I # print the network path to a given host
+
+# telnet
+
+# tcpdump
 
 # scp
 scp somefile.txt username@remotehost/remote/directory # copy a file to remote host
