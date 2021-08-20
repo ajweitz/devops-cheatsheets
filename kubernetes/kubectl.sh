@@ -4,6 +4,9 @@ kubectl config set-context --current --namespace=mynamespace
 # Get pod names in current namespace:
 kubectl get pods
 
+# Get services in current namespace:
+kubectl get svc
+
 # Get logs (STDOUT) from a specific pod:
 kubectl logs <POD_NAME>
 
@@ -23,3 +26,6 @@ kubectl describe quota
 
 # Copy a folder from your computer to a pod:
 kubectl cp <DIR_ON_YOUR_PC> <POD_NAME>:<DESTINATION_DIR_ON_POD>
+
+# delete a resource
+kubectl delete <RESOURCE_TYPE> <RESOURCE_NAME> # RESOURCE TYPE can be pod, service, etc...
