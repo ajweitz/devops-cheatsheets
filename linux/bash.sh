@@ -74,9 +74,13 @@ ps | awk '{print $2}' # print 2nd row of output of ps
 awk -F : '{print $1}' /etc/passwd # print the 1st row of /etc/passwd, using : as a delimeter
 df -h | awk '{print $1"\t"$2}' # print 1st and 2nd row from 'df -h' and seperate the rows with \t (Tab)
 
-# sed (find and replace)
+# sed
+# find and replace
 sed 's/this/withthat/' <somefile.txt # replace first occurence of 'this' with 'withthat' on every line
 sed 's/this/withthat/g' <somefile.txt # replace every occurence of 'this' with 'withthat'
+#print specific lines
+ll | sed -n '7p;8q' # print line 7, 8q is optional, it tell sed to not process beyond line 8
+ll | sed -n '20,40p;41q' # print lines 20-40
 
 # head/tail
 #head
