@@ -72,6 +72,7 @@ ls /fake/dir 2> /dev/null # redirect stderr to null pointer (this will simply no
 # printing rows
 ps | awk '{print $2}' # print 2nd row of output of ps
 awk -F : '{print $1}' /etc/passwd # print the 1st row of /etc/passwd, using : as a delimeter
+df -h | awk '{print $1"\t"$2}' # print 1st and 2nd row from 'df -h' and seperate the rows with \t (Tab)
 
 # sed (find and replace)
 sed 's/this/withthat/' <somefile.txt # replace first occurence of 'this' with 'withthat' on every line
