@@ -84,8 +84,8 @@ ll | head # show the first few lines of ll
 head /var/log/syslog # show first few lines of a given file
 #tail
 ll | tail # show the last few lines of ll
-tail /var/log/syslog # show first few lines of a given file
-tail /var/log/syslog # open and follow changes in file as they happen live
+tail /var/log/syslog # show last few lines of a given file
+ll | tail -n +2 # print everything except the first line
 
 # diff (compare 2 files)
 diff file1 file2
