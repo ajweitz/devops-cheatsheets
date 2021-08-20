@@ -69,6 +69,9 @@ ls /fake/dir 2> /dev/null # redirect stderr to null pointer (this will simply no
  grep someword -i file.txt # find all the lines that have someword, and ignore case (can be SOMEWORD, SoMeWORD, etc...)
 
 # awk
+# printing rows
+ps | awk '{print $2}' # print 2nd row of output of ps
+awk -F : '{print $1}' /etc/passwd # print the 1st row of /etc/passwd, using : as a delimeter
 
 # sed
 
