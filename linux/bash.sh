@@ -63,10 +63,10 @@ ls /fake/dir &> file.txt # shorter way of doing the above
 ls /fake/dir 2> /dev/null # redirect stderr to null pointer (this will simply not show stderr in the console)
 
 # grep (finding occurences of strings in files)
- grep someword file.txt # find all the lines that have someword
- ll | grep someword # find all the lines that have someword
- someerror 2> >(grep someword) # redirect stder to grep
- grep someword -i file.txt # find all the lines that have someword, and ignore case (can be SOMEWORD, SoMeWORD, etc...)
+grep someword file.txt # find all the lines that have someword
+ll | grep someword # find all the lines that have someword
+someerror 2> >(grep someword) # redirect stder to grep
+grep someword -i file.txt # find all the lines that have someword, and ignore case (can be SOMEWORD, SoMeWORD, etc...)
 
 # awk
 # printing rows
