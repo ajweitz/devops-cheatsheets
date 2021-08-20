@@ -29,3 +29,6 @@ kubectl cp <DIR_ON_YOUR_PC> <POD_NAME>:<DESTINATION_DIR_ON_POD>
 
 # delete a resource
 kubectl delete <RESOURCE_TYPE> <RESOURCE_NAME> # RESOURCE TYPE can be pod, service, etc...
+
+# extract resource to yaml
+kubectl get <RESOURCE_TYPE> <RESOURCE_NAME> -o yaml > some-definition.yaml
