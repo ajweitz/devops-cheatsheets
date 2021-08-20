@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: someReplicaSet
+  labels:
+    a: somedata
+
+
+spec:
+  template:
+    metadata:
+      name: somePod
+    labels:
+      type: nginx
+    spec:
+      containers:
+        - name: someContainer
+          image: nginx
+  replicas: 3 # amount of replicas
+
+  # the selector must match the pod template, the reason selector is used, is because ReplicaSet has the ability to match several pods outside of this definiton
+  selector: 
+    matchLabels:
+      type: nginx
