@@ -35,3 +35,6 @@ kubectl get <RESOURCE_TYPE> <RESOURCE_NAME> -o yaml > some-definition.yaml
 
 # dry run (testing if a resource can be deployed)
 kubectl apply -f someconfig.yml --dry-run=client
+
+# create a configuration template
+kubectl create <RESOURCE_TYPE> <OPTIONAL_PARAMS> <NAME> --dry-run -o yaml
