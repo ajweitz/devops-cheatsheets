@@ -1,0 +1,11 @@
+# this is used to define limits, such as CPU, memory, volume to a given namespace
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: somequota
+  namespace: somenamespace
+spec:
+  hard:
+    pods: "5"
+    limits.cpu: "6"
+    limits.memory: "5Gi"
