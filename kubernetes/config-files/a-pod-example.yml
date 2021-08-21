@@ -24,7 +24,12 @@ spec:
       # overriding ENTRYPOINT and CMD  
       command: ["sleep"] # corresponds to ENTRYPOINT in docker
       args: ["10"] # corresponds to CMD in docker
-      # environment variables
+      # setting environment variables
       env:
         - name: MY_ENV_VAR
           value: some value
+      # setting environment variables from a ConfigMap
+      envFrom:
+        - configMapRef:
+            name: someconfigmap # name of configmap. This will create an env var "somekey" with the value "somevalue", as specified in the f-configmap-examply.yml
+            

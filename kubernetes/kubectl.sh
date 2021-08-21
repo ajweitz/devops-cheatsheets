@@ -54,3 +54,6 @@ kubectl create deployment <DEPLOYMENT_NAME> --image=<IMAGE_NAME> --replicas=<AMO
 
 # create a namespace
 kubectl create namespace <NAMESPACE>
+
+# create a configmap
+kubectl create configmap <CONFIG_MAP_NAME> --from-literal=<KEY>=<VALUE>
