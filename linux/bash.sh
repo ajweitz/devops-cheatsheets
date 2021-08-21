@@ -175,6 +175,13 @@ usermod -a -G somegroup someusername # adding a user to a group
 # wget 
 
 # curl
+curl example.com # GET request to example.com, will return the body.
+curl -i example.com # GET request, returns header+body
+curl -I example.com # retruns header only
+curl -O example.com/somefile.zip # download the file somefile.zip
+curl -d somedata example.com/somePostReqUrl # send a POST request with "somedata" in the body
+curl -X PUT example.com/somePutUrl # specify an HTTP method, in this case PUT
+curl -H "Content-Type: application/json" example.com # specify a header
 
 # netstat
 netstat # show all the active connections and open ports (bi-directional, TCP+UDP)
