@@ -182,6 +182,7 @@ curl -O example.com/somefile.zip # download the file somefile.zip
 curl -d somedata example.com/somePostReqUrl # send a POST request with "somedata" in the body
 curl -X PUT example.com/somePutUrl # specify an HTTP method, in this case PUT
 curl -H "Content-Type: application/json" example.com # specify a header
+curl -L google.com # follow a redirect
 
 # netstat
 netstat # show all the active connections and open ports (bi-directional, TCP+UDP)
