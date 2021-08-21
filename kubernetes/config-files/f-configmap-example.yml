@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: someconfigmap
 data:
-  somekey: somevalue
+  SOME_VAR: somevalue
+  ANOTHER_VAR: anotherValue

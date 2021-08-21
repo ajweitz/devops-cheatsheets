@@ -21,6 +21,9 @@ spec:
       # exposing a port    
       ports:
         - containerPort: 80
+
+      ## OPTIONAL  
+      
       # overriding ENTRYPOINT and CMD  
       command: ["sleep"] # corresponds to ENTRYPOINT in docker
       args: ["10"] # corresponds to CMD in docker
@@ -28,8 +31,14 @@ spec:
       env:
         - name: MY_ENV_VAR
           value: some value
-      # setting environment variables from a ConfigMap
+          # setting a single env var from a configMap
+        - name: VAR_FROM_CONFIG_MAP
+          valueFrom:
+            configMapKeyRef:
+              name: someconfigmap # name of the config map
+              key: SOME_VAR # name of the env var we want to use
+      # setting multiple environment variables from a ConfigMap
       envFrom:
         - configMapRef:
-            name: someconfigmap # name of configmap. This will create an env var "somekey" with the value "somevalue", as specified in the f-configmap-examply.yml
+            name: someconfigmap # name of configmap. This will create the env vars "SOME_VAR" & "ANOTHER_VAR", as specified in the f-configmap-examply.yml
             
