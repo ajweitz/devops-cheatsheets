@@ -23,10 +23,11 @@ spec:
         - containerPort: 80
 
       ## OPTIONAL  
-      
+
       # overriding ENTRYPOINT and CMD  
       command: ["sleep"] # corresponds to ENTRYPOINT in docker
       args: ["10"] # corresponds to CMD in docker
+      
       # setting environment variables
       env:
         - name: MY_ENV_VAR
@@ -41,4 +42,10 @@ spec:
       envFrom:
         - configMapRef:
             name: someconfigmap # name of configmap. This will create the env vars "SOME_VAR" & "ANOTHER_VAR", as specified in the f-configmap-examply.yml
+      
+      volumes:
+      # attaching configMap to a volume (to be used as file)
+      - name: volumeForAppConfig
+        configMap:
+          name: someconfigmap
             
