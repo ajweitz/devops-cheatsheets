@@ -37,4 +37,20 @@ kubectl get <RESOURCE_TYPE> <RESOURCE_NAME> -o yaml > some-definition.yaml
 kubectl apply -f someconfig.yml --dry-run=client
 
 # create a configuration template
-kubectl create <RESOURCE_TYPE> <OPTIONAL_PARAMS> <NAME> --dry-run -o yaml
+kubectl create/run <RESOURCE_TYPE> <OPTIONAL_PARAMS> <NAME> --dry-run -o yaml
+
+#####################
+# IMPERATIVE EXAMPLES
+#####################
+
+# create a pod
+kubectl run <POD_NAME> --image=<IMAGE_NAME> --labels=<KEY>=<VALUE> --port=<PORT>
+
+# create a service
+kubectl create service <SERVICE_TYPE> <SERVICE_NAME> --tcp=<PORT>
+
+# create a deployment
+kubectl create deployment <DEPLOYMENT_NAME> --image=<IMAGE_NAME> --replicas=<AMOUNT_OF_REPLICAS>
+
+# create a namespace
+kubectl create namespace <NAMESPACE>
