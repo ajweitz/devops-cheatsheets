@@ -32,3 +32,6 @@ kubectl delete <RESOURCE_TYPE> <RESOURCE_NAME> # RESOURCE TYPE can be pod, servi
 
 # extract resource to yaml
 kubectl get <RESOURCE_TYPE> <RESOURCE_NAME> -o yaml > some-definition.yaml
+
+# dry run (testing if a resource can be deployed)
+kubectl apply -f someconfig.yml --dry-run=client
