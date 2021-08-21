@@ -32,20 +32,31 @@ spec:
       env:
         - name: MY_ENV_VAR
           value: some value
-          # setting a single env var from a configMap
+        # setting a single env var from a configMap
         - name: VAR_FROM_CONFIG_MAP
           valueFrom:
             configMapKeyRef:
               name: someconfigmap # name of the config map
               key: SOME_VAR # name of the env var we want to use
-      # setting multiple environment variables from a ConfigMap
+        # setting a single env var from a secret
+        - name: VAR_FROM_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: SOME_SECRET_VAR
+      # setting multiple environment variables from a ConfigMap or a Secret
       envFrom:
       - configMapRef:
           name: someconfigmap # name of configmap. This will create the env vars "SOME_VAR" & "ANOTHER_VAR", as specified in the f-configmap-examply.yml
+      - secretRef:
+          name: somesecret # name of the secret
       
       volumes:
       # attaching configMap to a volume (to be used as file)
       - name: volumeForAppConfig
         configMap:
           name: someconfigmap
+      # attaching secret to a volume
+      - name: volumeForSecret
+        secret:
+          secretName: somesecret
             
