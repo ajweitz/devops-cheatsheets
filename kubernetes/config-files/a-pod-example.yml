@@ -1,3 +1,6 @@
+# Pod is the most basic object, it defines what container you want to run.
+# Usually you wouldn't use it but rather define a "Deployment" object that has more options.
+
 kind: Pod
 apiVersion: v1
 metadata:

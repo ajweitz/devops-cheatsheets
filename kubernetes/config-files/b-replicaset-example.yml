@@ -1,3 +1,6 @@
+# Replica Sets are used to manage pods, you can specify how many replicas of a given pod you want to run.
+# As with pods, you would usually use a "Deployment" config that provides more configuration options
+
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
