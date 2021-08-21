@@ -67,6 +67,8 @@ grep someword file.txt # find all the lines that have someword
 ll | grep someword # find all the lines that have someword
 someerror 2> >(grep someword) # redirect stder to grep
 grep someword -i file.txt # find all the lines that have someword, and ignore case (can be SOMEWORD, SoMeWORD, etc...)
+somecommand | grep -v someword # show all lines that DON'T math someword
+somecommand | grep -E 'this|that' # show all lines that match 'this' OR 'that'
 
 # awk
 # printing rows
