@@ -13,11 +13,18 @@ spec:
   containers:
     - name: somename
       image: nginx
+      # defining resource limits 
       resources:
         limits:
-          cpu: "500m"
+          cpu: "500m" # this is 0.5 CPU. 1 CPU unit equals to: 1 AWS vCPU/1 GCP Core/1 Azure vCore
           memory: "256Mi"
+      # exposing a port    
       ports:
         - containerPort: 80
+      # overriding ENTRYPOINT and CMD  
       command: ["sleep"] # corresponds to ENTRYPOINT in docker
       args: ["10"] # corresponds to CMD in docker
+      # environment variables
+      env:
+        - name: MY_ENV_VAR
+          value: some value
