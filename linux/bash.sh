@@ -55,6 +55,8 @@ find -type d -name myDir # look for directories
 ###################
 
 # redirecting stdout and stderr
+echo hello world # prints hello world
+echo -n hello world # prints hello world without adding \n at the end
 echo hello world > file.txt # redirecting stdout of echo to the file.txt
 echo hello world >> file.txt # appending stdout of echo to the file.txt
 ls /fake/dir 2 > file.txt # redirecting stderr of ls to the file.txt
@@ -127,6 +129,10 @@ uniq -d file.txt # show only the duplicated lines
 wc file.txt # count the number of words in a file
 wc -l file.txt # count the number of lines in a file
 wc -c file.txt # count the number of bytes in a file
+
+# base64
+echo -n some string | base64 # encode some string to base64
+echo -n c29tZSBzdHJpbmc= | base64 -d # decode base64
 
 
 #############
