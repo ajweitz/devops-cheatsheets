@@ -13,3 +13,11 @@ spec:
   containers:
     - name: somename
       image: nginx
+      resources:
+        limits:
+          cpu: "500m"
+          memory: "256Mi"
+      ports:
+        - containerPort: 80
+      command: ["sleep"] # corresponds to ENTRYPOINT in docker
+      args: ["10"] # corresponds to CMD in docker
