@@ -15,3 +15,6 @@ docker system df -v # show size of containers and images
 
 # docker container
 docker container top <CONTAINER_ID> # shows the processes that run inside the given container
+
+# docker logs
+docker logs <CONTAINER_ID> # show what was written to stdout of a container
