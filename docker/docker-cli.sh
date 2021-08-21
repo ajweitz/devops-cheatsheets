@@ -12,3 +12,6 @@ docker run -t -i <image_name> bash # run interactive container
 
 # docker system
 docker system df -v # show size of containers and images
+
+# docker container
+docker container top <CONTAINER_ID> # shows the processes that run inside the given container
