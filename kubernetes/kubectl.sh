@@ -43,6 +43,9 @@ kubectl apply -f someconfig.yml --dry-run=client
 # create a configuration template
 kubectl create/run <RESOURCE_TYPE> <OPTIONAL_PARAMS> <NAME> --dry-run -o yaml
 
+# show rollout status
+kubectl rollout status deployment/<DEPLOYMENT_NAME>
+
 #####################
 # IMPERATIVE EXAMPLES
 #####################
