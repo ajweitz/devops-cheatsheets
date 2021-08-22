@@ -1,0 +1,14 @@
+# A job is used to run batch operations
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: myjob
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    spec:
+      containers:
+      - name: addition
+        image: ubuntu
+        command: ["expr",  "2", "+", "2"]
+      restartPolicy: Never

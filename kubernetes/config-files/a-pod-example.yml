@@ -102,6 +102,8 @@ spec:
   # will mount token of the specified serviceAccount to: /var/run/secrets/kubernetes.io/serviceaccount
   serviceAccount: someServiceAccount 
   
+  ### running on specific nodes
+
   # toleration for a taint (you can "taint" a node with a value, and only pods that can "tolerate" it will be scheduled there)
   tolerations:
     - key: "sometaintkey"
