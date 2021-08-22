@@ -60,3 +60,6 @@ kubectl create namespace <NAMESPACE>
 
 # create a configmap
 kubectl create configmap <CONFIG_MAP_NAME> --from-literal=<KEY>=<VALUE>
+
+# create a serviceaccount
+kubectl create serviceaccount <ACCOUNT_NAME>
