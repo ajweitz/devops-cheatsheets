@@ -63,3 +63,9 @@ kubectl create configmap <CONFIG_MAP_NAME> --from-literal=<KEY>=<VALUE>
 
 # create a serviceaccount
 kubectl create serviceaccount <ACCOUNT_NAME>
+
+# taint a node
+kubectl taint nodes <NODE_NAME> <KEY>=<VALUE>:<NoSchedule|PreferNoSchedule|NoExecute>
+
+# remove a taint from a node
+kubectl taint nodes <NODE_NAME> <TAINT_KEY>-
