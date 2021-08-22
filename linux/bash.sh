@@ -85,6 +85,7 @@ sed 's/this/withthat/g' <somefile.txt # replace every occurence of 'this' with '
 #print specific lines
 ll | sed -n '7p;8q' # print line 7, 8q is optional, it tell sed to not process beyond line 8
 ll | sed -n '20,40p;41q' # print lines 20-40
+ll | sed -n '/sometext/q;p' # print all lines and discard everything from when it matches "sometext"
 
 # xargs
 ll | xargs # print all lines in one line
