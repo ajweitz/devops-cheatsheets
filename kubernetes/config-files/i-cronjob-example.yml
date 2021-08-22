@@ -1,0 +1,17 @@
+# A CronJob is a job that will be scheduled periodically
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: myjob
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      ttlSecondsAfterFinished: 100
+      template:
+        spec:
+          containers:
+          - name: addition
+            image: ubuntu
+            command: ["expr",  "2", "+", "2"]
+          restartPolicy: Never

@@ -1,4 +1,4 @@
-# A job is used to run batch operations
+# A job is used to run batch operations, if you want to run a scheduled job, use CronJob instead.
 apiVersion: batch/v1
 kind: Job
 metadata:
