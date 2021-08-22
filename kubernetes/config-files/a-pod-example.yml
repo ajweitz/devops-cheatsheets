@@ -84,3 +84,24 @@ spec:
       operator: "Equal"
       effect: "NoSchedule"
             
+  # specifying on what node to run
+  nodeSelector:
+    somekey: somevalue # corresponds to a node label
+
+  # specifying node affinity (which has additional options to control node than a nodeSelector)  
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+            # in this setup, pod will run on node with somekey=someValue or somekey=anotherValue
+            - key: somekey
+              operator: In
+              values:
+                - someValue
+                - anotherValue
+            # here we will prevent from a pod to start on a node with anotherkey=somevalue
+            - key: anotherkey
+              operator: NotIn
+              values:
+                - somevalue

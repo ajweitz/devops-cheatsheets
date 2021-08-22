@@ -69,3 +69,6 @@ kubectl taint nodes <NODE_NAME> <KEY>=<VALUE>:<NoSchedule|PreferNoSchedule|NoExe
 
 # remove a taint from a node
 kubectl taint nodes <NODE_NAME> <TAINT_KEY>-
+
+# label a node
+kubectl label nodes <NODE_NAME> <LABEL_KEY>=<LABEL_VALUE>
