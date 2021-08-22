@@ -68,4 +68,8 @@ spec:
     runAsUser: 1000
     capabilities:
       add: ["MAC_ADMIN"] # add capabilities to the running process
+  
+  # will mount token of the specified serviceAccount to: /var/run/secrets/kubernetes.io/serviceaccount
+  serviceAccount: someServiceAccount 
+
             
