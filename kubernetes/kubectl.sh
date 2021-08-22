@@ -46,6 +46,12 @@ kubectl create/run <RESOURCE_TYPE> <OPTIONAL_PARAMS> <NAME> --dry-run -o yaml
 # show rollout status
 kubectl rollout status deployment/<DEPLOYMENT_NAME>
 
+# show deployment history
+kubectl rollout history deployment <DEPLOYMENT_NAME>
+
+# undo a deployment
+kubectl rollout undo deployment <DEPLOYMENT_NAME>
+
 #####################
 # IMPERATIVE EXAMPLES
 #####################
