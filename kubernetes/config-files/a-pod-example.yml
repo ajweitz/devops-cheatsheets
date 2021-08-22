@@ -13,11 +13,16 @@ spec:
   containers:
     - name: somename
       image: nginx
-      # defining resource limits 
+      # defining resource limits and requests
       resources:
+        # these are the resources that will be allocated for the pod on init  
+        requests:
+          cpu: "500m" # this is 0.5 CPU. 1 CPU unit equals to: 1 AWS vCPU/1 GCP Core/1 Azure vCore.
+          memory: "512Mi"
+        # these will be the absolute limit for the container to use.
         limits:
-          cpu: "500m" # this is 0.5 CPU. 1 CPU unit equals to: 1 AWS vCPU/1 GCP Core/1 Azure vCore
-          memory: "256Mi"
+          cpu: 1 # if a container goes beyond cpu limit it will be throttled
+          memory: "1Gi" # if a container goes beyound memory limit it will be KILLED!
       # exposing a port    
       ports:
         - containerPort: 80
