@@ -64,6 +64,31 @@ spec:
       - name: volumeForSecret
         secret:
           secretName: somesecret
+      # this will perform a check to ensure the application is ready to serve content
+      readinessProbe:
+        # check based on http endpoint
+        httpGet:
+          path: /some/path
+          port: 8080
+        # check based on a tcp socket
+        tcpSocket:
+          port: 3306
+        # check based on some script
+        exec:
+          command:
+            - cat
+            - /app/isready.txt
+        # use a delay before probing for Readiness
+        initialDelaySeconds: 10
+        # specify probing period - k8s will probe 3 times before failing
+        periodSeconds: 5
+
+      # health checks  
+      livenessProbe:
+        # same fields as readinessProbe
+        httpGet:
+          path: /some/path
+          port: 8080
 
       # run this specific container as user 1000    
       securityContext:
