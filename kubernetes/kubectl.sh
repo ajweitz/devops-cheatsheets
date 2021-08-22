@@ -9,6 +9,7 @@ kubectl get svc
 
 # Get logs (STDOUT) from a specific pod:
 kubectl logs <POD_NAME>
+kubectl logs -f <POD_NAME> # stream the logs live
 
 # Get pod deployment information (useful when pod failed to deploy):
 kubectl describe pod <POD_NAME>
