@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: someHeadlessService
+spec:
+  selector:
+    app: someStatefullApp
+  ports:
+  - port: 80
+    targetPort: statefullAppPort
+  clusterIP: None # this is what makes the service Headless

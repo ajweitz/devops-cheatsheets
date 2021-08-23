@@ -10,24 +10,25 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: myapp
+      app: someStatefullApp
 
-  serviceName: someServiceForStatefulSet # this service must exist before deployment of StatefulSet.
+  serviceName: someHeadlessService # this service must exist before deployment of StatefulSet. Defined in I-Headless-Service.yml
   replicas: 2
   template:
     metadata:
       labels:
-        app: myapp
+        app: someStatefullApp
     spec:
       containers:
       - name: myapp
         image: k8s.gcr.io/nginx-slim:0.8
         ports:
         - containerPort: 80
-          name: web
+          name: statefullAppPort
         volumeMounts:
         - name: someClaimName
           mountPath: /usr/share/nginx/html
+  # for a StatefulSet, you would want to create a PVC per Pod, the volumeClaimTemplate ensures to dynamically create a PVC for each.        
   volumeClaimTemplates:
   - metadata:
       name: someClaimName
