@@ -1,0 +1,39 @@
+# Usually used for Statefull application (Databases).
+# StatefulSet Provides:
+# - a stable name for each pod (in Deployment, the suffix in the pod name is random).
+# - an order for deploying the pods (in Deployment, pods are launched simultanousley).
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: someStatefulSet
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+
+  serviceName: someServiceForStatefulSet # this service must exist before deployment of StatefulSet.
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: k8s.gcr.io/nginx-slim:0.8
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: someClaimName
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: someClaimName
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
+  # podManagementPolicy: Parallel # this can be specified if we want to launch Pods without a specific order.
