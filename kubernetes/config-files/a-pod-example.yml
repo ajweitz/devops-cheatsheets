@@ -64,6 +64,13 @@ spec:
       - name: volumeForSecret
         secret:
           secretName: somesecret
+
+      # Using a PVC
+      volumeMounts:
+      - mountPath: "/var/www/html"
+        name: someclaimname # this name corresponds to the name we defined in persistentVolumeClaim section in this config file
+
+
       # this will perform a check to ensure the application is ready to serve content
       readinessProbe:
         # check based on http endpoint
@@ -102,6 +109,13 @@ spec:
   # will mount token of the specified serviceAccount to: /var/run/secrets/kubernetes.io/serviceaccount
   serviceAccount: someServiceAccount 
   
+  # using a PVC
+  volumes:
+  - name: somepvc # defined in o-persistentvolumeclaim-example.yml
+    persistentVolumeClaim:
+      claimName: someclaimname
+
+
   ### running on specific nodes
 
   # toleration for a taint (you can "taint" a node with a value, and only pods that can "tolerate" it will be scheduled there)
