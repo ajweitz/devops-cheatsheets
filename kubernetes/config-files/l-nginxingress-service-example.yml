@@ -5,6 +5,11 @@ metadata:
   name: someingress
   labels:
     name: someingress
+  annotations:
+    # the below annotation is used to re-write the path when it is routing to a service.
+    # without this annotation, the ingress would route: subdomain.mydomain.com/some/path -> someClusterIpService:80/some/path
+    # with this annotation defined, it instead will route: subdomain.mydomain.com/some/path -> someClusterIpService:80/
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: subdomain.mydomain.com
