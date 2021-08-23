@@ -1,0 +1,15 @@
+# this is used mostly for testing purposes - in case you want to expose a pod via a Node's IP
+# it will automatically run on all nodes, so any node ip will work
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: someNodePortService
+spec:
+  type: NodePort 
+  selector:
+    type: nginx # match the label of the pod defined in c-deployment-example.yml
+  ports:
+  - port: 80 # this will be exposed internally
+    nodePort: 30001 # must be greater than 30k. This port will be exposed via <NODE_IP>:<nodePort>
+    targetPort: nginxport # this is the port to forward to

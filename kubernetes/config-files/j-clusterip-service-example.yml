@@ -1,0 +1,13 @@
+# used for exposing communication to a pod internally - together with defining an ingress, this is the way to go
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: someClusterIpService
+spec:
+  type: ClusterIP 
+  selector:
+    type: nginx # match the label of the pod defined in c-deployment-example.yml
+  ports:
+  - port: 80 # the port to listen to
+    targetPort: nginxport # the port to forward to - this will be the port of the pod
