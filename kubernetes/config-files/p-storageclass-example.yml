@@ -1,0 +1,5 @@
+apiVersion: sotrage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: someStorageClass
+provisioner: kubernetes.io/gce-pd

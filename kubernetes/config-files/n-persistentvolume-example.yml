@@ -2,6 +2,8 @@
 # To assign volumes to a Pod, you would define a "PersistentVolumeClaim" that will bind to the PersistentVolume you created.
 # There is a 1 to 1 relation between a PVC and PV, so if the storage defined here is bigger than what the Claim needs, it will simply be wasted.
 
+# In actual environment, you wouldn't define a PV, but rather a StorageClass that will dynamically create PVs based on PVC
+
 apiVersion: v1
 kind: PersistentVolume
 metadata:

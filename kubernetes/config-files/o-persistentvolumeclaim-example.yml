@@ -9,3 +9,5 @@ spec:
   # for more information about accessModes, see the persistent volume example
   accessModes:
     - ReadWriteOnce
+  # In case we want PV to be dynamically provisioned, we can use a storage class
+  storageClassName: somestorageclass # the storage class is defined in p-storageclass-example.yml
