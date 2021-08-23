@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: somepersistentvolume
+spec:
+  capacity:
+    storage: "1Gi"
+  accessModes:
+    - ReadWriteMany # this allows pods to read/write on volume from different nodes.
+    # - ReadWriteOnce # this allows pods to read/write on a volume, but forces them to be on the same node as the volume.
+    # - ReadOnlyMany # this will allow pods to only read data from volume.
+
+  # below you would define the actual store, based on the provider. You can even define to store the data on the nodes themselves.  
+  awsElasticBlockStore:
+    volumeID: someawsvolumeid
+    fsType: ext4
