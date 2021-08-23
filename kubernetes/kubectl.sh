@@ -82,3 +82,6 @@ kubectl taint nodes <NODE_NAME> <TAINT_KEY>-
 
 # label a node
 kubectl label nodes <NODE_NAME> <LABEL_KEY>=<LABEL_VALUE>
+
+# create an ingress
+kubectl create ingress <INGRESS_NAME> --rule="<HOST>/<PATH>=<SERVICE_NAME>:<SERVICE_PORT>"

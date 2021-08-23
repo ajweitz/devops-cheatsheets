@@ -1,0 +1,30 @@
+# for this to work, an Nginx Ingress Controller must be deploed on the cluster
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: someingress
+  labels:
+    name: someingress
+spec:
+  rules:
+  - host: subdomain.mydomain.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/some/path"
+        backend:
+          service:
+            name: someClusterIpService # the name of the service
+            port: 
+              number: 80 # the port of the service
+
+  - host: another.mydomain.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: anotherClusterIpService
+            port: 
+              number: 80
