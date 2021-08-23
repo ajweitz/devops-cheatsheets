@@ -1,0 +1,41 @@
+# Network policies are used in case you want to limit access to a certain Pod.
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: somepolicy
+spec:
+  # here we choose to which Pod we should apply this policy
+  podSelector:
+    matchLabels:
+      type: nginx # corresponds to the label in the pod section of c-deployment-example.yml
+
+  policyTypes:
+    - Ingress # if we want to define ingress, then w need a corresponding ingress section 
+    - Egress # if we want to define egress, then w need a corresponding egress section
+  
+  # here we define, from what pod/ip we want to grant access to the pod defined above
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          labelOfSomePod: someValue
+      # this should be defined in case you want to allow ingress from a specific namespace (for example if you have dev/test/prod namespaces)    
+      namespaceSelector:
+        matchLabels:
+          name: somenamespace
+    # we can define ingress based on ip
+    - ipBlock:
+        cidr: 192.168.0.0/24 
+    # define on which pod ingress is allowed
+    ports:
+      - protocol: tcp
+        port: 80 
+
+# here we define to what network resource we want to allow/limit egress, by default all is allowed.
+egress:
+- to:
+  - ipBlock: 192.168.5.10/32
+  ports:
+  - protocol: TCP
+    port: 80
