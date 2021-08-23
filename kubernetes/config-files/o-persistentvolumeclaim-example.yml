@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: somepvc
+spec:
+  resources:
+    requests:
+      storage: "1Gi"
+  # for more information about accessModes, see the persistent volume example
+  accessModes:
+    - ReadWriteOnce
