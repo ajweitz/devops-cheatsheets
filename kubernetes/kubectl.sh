@@ -52,6 +52,15 @@ kubectl rollout history deployment <DEPLOYMENT_NAME>
 # undo a deployment
 kubectl rollout undo deployment <DEPLOYMENT_NAME>
 
+# evict pods from a node
+kubectl drain <NODE_NAME> # it will move to "unschedulable" state. To return node online run kubectl uncordon
+
+# bringing back a node online after eviction
+kubectl uncordon <NODE_NAME>
+
+# mark a node as unschedulable
+kubectl cordon <NODE_NAME>
+
 #####################
 # IMPERATIVE EXAMPLES
 #####################
