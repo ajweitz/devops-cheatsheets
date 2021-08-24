@@ -1,0 +1,23 @@
+# DaemonSet ensures a copy of a Pod runs on each one of the nodes in the cluster.
+# The configuration is exact same as Deployment, but the "kind" is different.
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: someDaemonSet
+spec:
+  selector:
+    matchLabels:
+      app: daemonSetPod
+  template:
+    metadata:
+      labels:
+        app: daemonSetPod
+    spec:
+      containers:
+      - name: daemonSetContainer
+        image: someMonitoringAgent
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
