@@ -189,6 +189,7 @@ for key, value in dictionaryExample.items():
     print(value)
 
 # loop over range (0-9):
+# will print from 0-8
 for n in range(0, 9):
     print(n)
 
