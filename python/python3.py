@@ -251,3 +251,18 @@ import datetime
 datetime.datetime.now() # returns datetime object: datetime.datetime(2021, 8, 8, 9, 49, 44, 773229)
 str(datetime.datetime.now()) # or print() returns the string representation: '2021-08-08 09:49:53.556783'
 datetime.datetime.now().time() # returns the time in hours:minutes:seconds:milliseconds, datetime.time(9, 51, 19, 466522)
+
+
+###############
+# HTTP REQUESTS
+###############
+# pip install requests # must install library first
+import requests
+response = requests.get(url = "http://example.com/api", params={'somekey','someval'}) # send a GET request to http://example.com/api?somekey=someval
+response.json() # if the response is JSON, this will parse it to a python object.
+response.text() # if the response is Text, this will return it as string.
+response.ok # True if the response we recieved is OK
+response.status_code # get the response status code
+response = requests.post(url = "http://example.com/api", json = {"somekey","someval"}) # POST request, json will be sent as body in JSON format
+
+response = requests.post(url = "http://example.com/api", data = "some plain text data") # POST request, data will be sent as body in plain text
