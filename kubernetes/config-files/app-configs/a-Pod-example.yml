@@ -146,3 +146,6 @@ spec:
               operator: NotIn
               values:
                 - somevalue
+
+  # manually specifying on what node to run - this field is set automatically by the kube scheduler, but you could set it yourself
+  nodeName: somenode
