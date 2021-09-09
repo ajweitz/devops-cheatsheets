@@ -15,7 +15,7 @@
 * <kbd>Ctrl</kbd>+<kbd>O</kbd> - Go back to the previous position
 * <kbd>NUMBER</kbd><kbd>G</kbd> - Go to a specific line in the file.
 * <kbd>%</kbd> - Find the matching parentheses for `(`,`[`,`{`.
-#### Search
+### Search
 * <kbd>/</kbd> - Will prompt for text search. You can enter some text and hit <kbd>Enter</kbd>.
 * <kbd>n</kbd> - Show **N**ext occurence of the search phrase.
 * <kbd>N</kbd> - Show previous occurence of the search phrase.
