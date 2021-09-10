@@ -44,6 +44,9 @@
 * <kbd>c</kbd><kbd>e</kbd> - Delete text until the end of word and place you in Insert mode (similar to <kbd>d</kbd><kbd>e</kbd>, with addition of placing you in Insert mode).
 * <kbd>c</kbd><kbd>w</kbd> - Delete text until the beggining of next word and place you in Insert mode.
 * <kbd>c</kbd><kbd>3</kbd> - Delete text until the end of line and place you in Insert mode.
+* <kbd>:</kbd><kbd>r</kbd><kbd>Spacebar</kbd>
+    * `somefile.txt` - Insert content of the `somefile.txt` after cursor.
+    * `!somecommand` - Insert output of  `somecommand` after cursor.
 ### Deleting Text
 * <kbd>x</kbd> - Delete a character.
 * <kbd>d</kbd><kbd>d</kbd> - **D**elete the whole line.
