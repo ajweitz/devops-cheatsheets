@@ -1,6 +1,9 @@
-# Vim Keyboard Shortcuts
+# Vim Cheatsheet
 
-## Shortcuts
+## Opening files
+* `vim somefile.txt` - Open `somefile.txt`.
+* `vim -f a.txt b.txt` - Open `a.txt` and `b.txt` as tabs.
+## Keyboard Shortcuts
 ### Navigation
 * <kbd>h</kbd>,<kbd>j</kbd>,<kbd>k</kbd>,<kbd>l</kbd> - Navigation (left, down, up, right).
 * <kbd>0</kbd> - Go to the beggining of a line.
@@ -15,6 +18,8 @@
 * <kbd>Ctrl</kbd>+<kbd>O</kbd> - Go back to the previous position
 * <kbd>NUMBER</kbd><kbd>G</kbd> - Go to a specific line in the file.
 * <kbd>%</kbd> - Find the matching parentheses for `(`,`[`,`{`.
+* <kbd>g</kbd><kbd>t</kbd> - **G**o to next **T**ab.
+* <kbd>g</kbd><kbd>T</kbd> - **G**o to previous **T**ab.
 ### Search
 * <kbd>/</kbd> - Will prompt for text search. You can enter some text and hit <kbd>Enter</kbd>.
 * <kbd>n</kbd> - Show **N**ext occurence of the search phrase.
@@ -25,6 +30,7 @@
 * <kbd>:</kbd><kbd>w</kbd><kbd>Enter</kbd> - Save.
 * <kbd>:</kbd><kbd>w</kbd>` somefile.txt`+<kbd>Enter</kbd> - Save file as `somefile.txt` (**Note:** there is whitespace after the <kbd>w</kbd>).
 * <kbd>:</kbd><kbd>w</kbd><kbd>q</kbd><kbd>!</kbd><kbd>Enter</kbd> - Save and Exit.
+* <kbd>:</kbd><kbd>q</kbd><kbd>a</kbd> - **Q**uit **A**ll tabs (in case you have mutiple tabs open).
 ### Inserting Text
 * <kbd>i</kbd> - **I**nsert text.
 * <kbd>a</kbd> - **A**ppend text.
@@ -62,3 +68,17 @@ When you delete a character/word/line, vim stores it in memory, and you can past
 ### Executing External Commands
 * <kbd>:</kbd>
     * `!somecommand`+<kbd>Enter</kbd> - Will execute a command, in this case `somecommand`.
+
+## Setting Options
+These options can be either set directly in `vim` via <kbd>:</kbd> or by adding them to the `~/.vimrc` file.
+* `syntax on` - Enable syntax highlighting (different colors for source code).
+* `colorscheme <SCHEME_NAME>` - Choose color scheme for vim, for example: `colorscheme torte` will set a color scheme with a dark-gray background.
+* `set number` - Show line numbers.
+* `set autoindent` - Enable auto indentation.
+* `set noautoindent` - Disable auto indentation.
+* `set hlsearch` - Enable highlight search results. This will turn on highlighting when searching with <kbd>/</kbd>.
+* `set nohlsearch` - Disable highlight search.
+* `set ignorecase` - Ignore case when searching.
+* `set noignorecase` - Disable ignore case when searching (Enable case sensitivity).
+* `set spell` - Enable spell checking.
+* `set nospell` - Disable spell checking.
