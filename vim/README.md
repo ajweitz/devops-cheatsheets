@@ -9,14 +9,16 @@
 * <kbd>0</kbd> - Go to the beggining of a line.
 * <kbd>w</kbd> - Go to the start of the next **W**ord.
 * <kbd>e</kbd> - Go to the **E**nd of the next word.
+* <kbd>b</kbd> - Go **B**ack to the previous word.
 * <kbd>NUMBER</kbd><kbd>w</kbd> - Go to the start of the next <**NUMBER**> **W**ord (For example <kbd>2</kbd><kbd>w</kbd> will get you 2 words ahead).
 * <kbd>NUMBER</kbd><kbd>e</kbd> - Go to the **E**nd of the next <**NUMBER**> **W**ord.
 * <kbd>Esc</kbd> - Back to Navigation mode.
 * <kbd>Ctrl</kbd>+<kbd>G</kbd> - Show line number and position in the file.
 * <kbd>G</kbd> - Go to the end of the file.
-* <kbd>g</kbd><kbd>g</kbd> - Go to the start of the file.
+* <kbd>g</kbd><kbd>g</kbd> - **G**o to the start of the file.
 * <kbd>Ctrl</kbd>+<kbd>O</kbd> - Go back to the previous position
-* <kbd>NUMBER</kbd><kbd>G</kbd> - Go to a specific line in the file.
+* <kbd>Ctrl</kbd>+<kbd>I</kbd> - Go to the next position (opposite of <kbd>Ctrl</kbd>+<kbd>O</kbd>)
+* <kbd>NUMBER</kbd><kbd>G</kbd> - **G**o to a specific line in the file.
 * <kbd>%</kbd> - Find the matching parentheses for `(`,`[`,`{`.
 * <kbd>g</kbd><kbd>t</kbd> - **G**o to next **T**ab.
 * <kbd>g</kbd><kbd>T</kbd> - **G**o to previous **T**ab.
@@ -48,9 +50,10 @@
 * <kbd>d</kbd><kbd>$</kbd> - **D**elete from cursor to the end of the line.
 * <kbd>d</kbd><kbd>NUMBER</kbd><kbd>w</kbd> - **D**elete from cursor to the beggining of next <**NUMBER**> **W**ord.
 * <kbd>d</kbd><kbd>NUMBER</kbd><kbd>e</kbd> - **D**elete from cursor to **E**nd of <kbd>2-9</kbd> word.
-### Undo
+### Undo/Redo
 * <kbd>u</kbd> - **U**ndo last change.
 * <kbd>U</kbd> - **U**ndo changes made to the entire line.
+* <kbd>Ctrl</kbd>+<kbd>R</kbd> - **R**edo
 
 ### Replacing Text
 * <kbd>r</kbd><kbd>ANY CHARACTER</kbd> - **R**eplace character pointed by curser with any character.
