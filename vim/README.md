@@ -30,7 +30,9 @@
 ### Save and Exit
 * <kbd>:</kbd><kbd>q</kbd><kbd>!</kbd><kbd>Enter</kbd> - **Q**uit.
 * <kbd>:</kbd><kbd>w</kbd><kbd>Enter</kbd> - Save.
-* <kbd>:</kbd><kbd>w</kbd>` somefile.txt`+<kbd>Enter</kbd> - Save file as `somefile.txt` (**Note:** there is whitespace after the <kbd>w</kbd>).
+* <kbd>:</kbd><kbd>w</kbd>` somefile.txt`+<kbd>Enter</kbd> - Save file as `somefile.txt` 
+    * **Note:** There is whitespace after the <kbd>w</kbd>.
+    * **Note 2:** This operation can be done while in visual mode <kbd>v</kbd>, and it will save only the selected lines to a file.
 * <kbd>:</kbd><kbd>w</kbd><kbd>q</kbd><kbd>!</kbd><kbd>Enter</kbd> - Save and Exit.
 * <kbd>:</kbd><kbd>q</kbd><kbd>a</kbd> - **Q**uit **A**ll tabs (in case you have mutiple tabs open).
 ### Inserting Text
