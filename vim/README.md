@@ -84,9 +84,9 @@ These options can be either set directly in `vim` via <kbd>:</kbd> or by adding 
 * `set number` - Show line numbers.
 * `set autoindent` - Enable auto indentation.
 * `set noautoindent` - Disable auto indentation.
-* `set hlsearch` - Enable highlight search results. This will turn on highlighting when searching with <kbd>/</kbd>.
-* `set nohlsearch` - Disable highlight search.
-* `set ignorecase` - Ignore case when searching.
-* `set noignorecase` - Disable ignore case when searching (Enable case sensitivity).
+* `set hls` - Enable **H**igh**L**ight **S**earch results. This will turn on highlighting when searching with <kbd>/</kbd>.
+* `set nohls` - Disable highlight search.
+* `set ic` - **I**gnore **C**ase when searching
+* `set noic` - Disable ignore case when searching (Enable case sensitivity).
 * `set spell` - Enable spell checking.
 * `set nospell` - Disable spell checking.
