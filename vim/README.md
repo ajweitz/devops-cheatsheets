@@ -99,3 +99,6 @@ To Disable an option that was enabled with `set` you can simply add the keyword 
 * `set ic` - **I**gnore **C**ase when searching
 * `set spell` - Enable spell checking.
 * `set nospell` - Disable spell checking.
+* `set expandtab` - When tabbing, tabs will be replaced with whitespaces
+* `set tabstop=<NUMBER>` - Set the number of spaces that a tab will be replaced by.
+* `set shiftwidth=<NUMBER>` - Set the number of spaces to indent when pressing tab, usually you will set it to match the `tabstop`.
