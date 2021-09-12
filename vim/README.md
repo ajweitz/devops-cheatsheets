@@ -24,7 +24,9 @@
 * <kbd>%</kbd> - Find the matching parentheses for `(`,`[`,`{`.
 * <kbd>g</kbd><kbd>t</kbd> - **G**o to next **T**ab.
 * <kbd>g</kbd><kbd>T</kbd> - **G**o to previous **T**ab.
-* <kbd>g</kbd><kbd>d</kbd> - **G**o to **D**eclaration (goes to the 1st instance of the word).
+* <kbd>g</kbd><kbd>d</kbd> - **G**o to **D**eclaration (goes to the 1st instance of the word.
+* <kbd>*</kbd> - Go to the next appearance of the current word.
+* <kbd>#</kbd> - Go to the previous appearance of the current word.
 ### Search
 * <kbd>/</kbd> - Will prompt for text search. You can enter some text and hit <kbd>Enter</kbd>.
 * <kbd>n</kbd> - Show **N**ext occurence of the search phrase.
