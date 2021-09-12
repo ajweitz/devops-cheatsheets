@@ -81,7 +81,10 @@ When you delete a character/word/line, vim stores it in memory, and you can past
 ### Executing External Commands
 * <kbd>:</kbd>
     * `!somecommand`+<kbd>Enter</kbd> - Will execute a command, in this case `somecommand`.
-
+### Visual Mode
+While in this mode, you can select text you want to copy, save or indent.
+* <kbd>v</kbd> - Enter **V**isual mode
+* <kbd>V</kbd> - Enter **V**isual line mode
 ## Setting Options
 These options can be either set directly in `vim` via <kbd>:</kbd> or by adding them to the `~/.vimrc` file.
 * `syntax on` - Enable syntax highlighting (different colors for source code).
