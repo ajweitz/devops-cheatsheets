@@ -18,10 +18,13 @@
 * <kbd>g</kbd><kbd>g</kbd> - **G**o to the start of the file.
 * <kbd>Ctrl</kbd>+<kbd>O</kbd> - Go back to the previous position
 * <kbd>Ctrl</kbd>+<kbd>I</kbd> - Go to the next position (opposite of <kbd>Ctrl</kbd>+<kbd>O</kbd>)
+* <kbd>Ctrl</kbd>+<kbd>D</kbd> - **G**o **D**own 20 lines.
+* <kbd>Ctrl</kbd>+<kbd>U</kbd> - **G**o **U**p 20 lines.
 * <kbd>NUMBER</kbd><kbd>G</kbd> - **G**o to a specific line in the file.
 * <kbd>%</kbd> - Find the matching parentheses for `(`,`[`,`{`.
 * <kbd>g</kbd><kbd>t</kbd> - **G**o to next **T**ab.
 * <kbd>g</kbd><kbd>T</kbd> - **G**o to previous **T**ab.
+* <kbd>g</kbd><kbd>d</kbd> - **G**o to **D**eclaration (goes to the 1st instance of the word).
 ### Search
 * <kbd>/</kbd> - Will prompt for text search. You can enter some text and hit <kbd>Enter</kbd>.
 * <kbd>n</kbd> - Show **N**ext occurence of the search phrase.
