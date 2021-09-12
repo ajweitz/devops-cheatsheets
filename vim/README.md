@@ -86,12 +86,13 @@ When you delete a character/word/line, vim stores it in memory, and you can past
 These options can be either set directly in `vim` via <kbd>:</kbd> or by adding them to the `~/.vimrc` file.
 * `syntax on` - Enable syntax highlighting (different colors for source code).
 * `colorscheme <SCHEME_NAME>` - Choose color scheme for vim, for example: `colorscheme torte` will set a color scheme with a dark-gray background.
+### :set
+To Disable an option that was enabled with `set` you can simply add the keyword `no` before the option. For example: `set number` to enable and `set nonumber` to disable.
 * `set number` - Show line numbers.
 * `set autoindent` - Enable auto indentation.
-* `set noautoindent` - Disable auto indentation.
 * `set hls` - Enable **H**igh**L**ight **S**earch results. This will turn on highlighting when searching with <kbd>/</kbd>.
 * `set nohls` - Disable highlight search.
+* `set is` - Enable **I**ncrement **S**earch.
 * `set ic` - **I**gnore **C**ase when searching
-* `set noic` - Disable ignore case when searching (Enable case sensitivity).
 * `set spell` - Enable spell checking.
 * `set nospell` - Disable spell checking.
