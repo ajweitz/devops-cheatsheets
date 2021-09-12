@@ -7,6 +7,15 @@ kubectl get pods
 # Get services in current namespace:
 kubectl get svc
 
+# Get All objects (Pods, ReplicaSets, etc...)
+kubectl get all
+
+# Get objects matching a selector
+kubectl get <RESOURCE_TYPE> --selector <KEY>=<VALUE>,<KEY2>=<VALUE2>
+
+# Get objects without header (for counting purposes)
+kubectl get <RESOURCE_TYPE> --no-headers
+
 # Get logs (STDOUT) from a specific pod:
 kubectl logs <POD_NAME>
 kubectl logs -f <POD_NAME> # stream the logs live
