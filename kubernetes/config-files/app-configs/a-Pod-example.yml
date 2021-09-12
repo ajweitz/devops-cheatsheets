@@ -123,7 +123,10 @@ spec:
     - key: "sometaintkey"
       value: "sometaintvalue"
       operator: "Equal"
-      effect: "NoSchedule"
+      # NoSchedule - no new schedules, running pods will be kept
+      # PreferNoSchedule - try not to schedule, but will schedule if no other nodes are available
+      # NoExecute - will not schedule new pods and stop current running pods that don't match the taint
+      effect: "NoSchedule" 
             
   # specifying on what node to run
   nodeSelector:
