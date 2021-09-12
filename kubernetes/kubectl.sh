@@ -16,6 +16,9 @@ kubectl get <RESOURCE_TYPE> --selector <KEY>=<VALUE>,<KEY2>=<VALUE2>
 # Get objects without header (for counting purposes)
 kubectl get <RESOURCE_TYPE> --no-headers
 
+# Get objects from all namespaces
+kubectl get <RESOURCE_TYPE> -A
+
 # Get logs (STDOUT) from a specific pod:
 kubectl logs <POD_NAME>
 kubectl logs -f <POD_NAME> # stream the logs live
