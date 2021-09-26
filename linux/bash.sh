@@ -192,6 +192,7 @@ netstat -lt # show all the TCP ports we listen to
 netstat -lu # show all the UDP ports we listen to
 netstat -p # show propgrams that are using these ports
 netstat -plt # show all the TCP ports we listen to and what programs are using them
+netstat -ap # show all active connections for programs
 
 # traceroute
 traceroute google.com -I # print the network path to a given host
