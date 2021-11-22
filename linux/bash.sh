@@ -197,6 +197,9 @@ netstat -ap # show all active connections for programs
 # traceroute
 traceroute google.com -I # print the network path to a given host
 
+# nmap
+nmap -p 1-65535 -T4 -A -v someHost # Test what TCP post are reachable on the target host
+
 # nc (Netcat)
 nc -zv google.com 80 # test connection to a server with specific port
 nc -v -z -w 3 google.com 80 &> /dev/null && echo "Online" || echo "Offline" # test connection to a port with a timeout of 3 seconds. will print online/offline.
