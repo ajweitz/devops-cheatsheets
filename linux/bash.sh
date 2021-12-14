@@ -71,6 +71,7 @@ someerror 2> >(grep someword) # redirect stder to grep
 grep someword -i file.txt # find all the lines that have someword, and ignore case (can be SOMEWORD, SoMeWORD, etc...)
 somecommand | grep -v someword # show all lines that DON'T math someword
 somecommand | grep -E 'this|that' # show all lines that match 'this' OR 'that'
+grep -r /some/path -e someword # perform a recursive search of someword in /some/path directory
 
 # awk
 # printing rows
