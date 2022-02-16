@@ -191,7 +191,7 @@ netstat # show all the active connections and open ports (bi-directional, TCP+UD
 netstat -l # show all the ports we listen to
 netstat -lt # show all the TCP ports we listen to
 netstat -lu # show all the UDP ports we listen to
-netstat -p # show propgrams that are using these ports
+netstat -p # show programs that are using these ports
 netstat -plt # show all the TCP ports we listen to and what programs are using them
 netstat -ap # show all active connections for programs
 
