@@ -10,6 +10,7 @@ docker ps # will list IDs of containers
 
 # docker exec
 docker exec -it <mycontainerId> bash # attaching to a container
+docker exec <mycontainerId> <somecommand> # running a command in a container
 
 # docker run
 docker run <image> # run container in attached mode (this will block the terminal and show the output from the container)
