@@ -16,7 +16,9 @@ docker run <image> # run container in attached mode (this will block the termina
 docker run -d <image> # run container in detached mode
 docker run -t -i <image> sh # run container with interactive shell
 docker run <image> ping google.com # run container with custom command
-docker run -d --name <SOME_CONTAINER_NAME> <image> # run container and assign it a name (later it will be easier to identify it and remove it)
+docker run -d --name <containerName> <image> # run container and assign it a name (later it will be easier to identify it and remove it)
+docker run -p <hostport>:<containerPort> <image> # run container with port mapping
+docker run -v <hostpath>:<containerpath> <image> # run container with volume mapping
 
 # docker system
 docker system df -v # show size of containers and images
