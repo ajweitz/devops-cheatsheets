@@ -21,6 +21,9 @@ docker run -d --name <containerName> <image> # run container and assign it a nam
 docker run -p <hostport>:<containerPort> <image> # run container with port mapping
 docker run -v <hostpath>:<containerpath> <image> # run container with volume mapping
 
+# docker stats
+docker stats # show all containers stats (cpu, memory, network, etc)
+
 # docker system
 docker system df -v # show size of containers and images
 
