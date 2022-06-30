@@ -7,3 +7,6 @@ helm upgrade --install <CHART_NAME> ./ # upgrade/install
 
 # Uninstall a chart with helm:
 helm uninstall <CHART_NAME>
+
+# Debug a template
+ helm template . # will render the template and show the resulting YAML
