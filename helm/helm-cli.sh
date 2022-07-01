@@ -16,3 +16,8 @@ helm rollback <chart-name> <version>
 
 # Debug a template
 helm template . # will render the template and show the resulting YAML
+
+# downloading a helm chart locally
+helm repo add stable https://somechartrepo.storage.googleapis.com/
+helm repo update
+helm pull stable/somechart --untrar
