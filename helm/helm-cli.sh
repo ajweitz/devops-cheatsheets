@@ -15,4 +15,4 @@ helm uninstall <chart-name>
 helm rollback <chart-name> <version>
 
 # Debug a template
- helm template . # will render the template and show the resulting YAML
+helm template . # will render the template and show the resulting YAML
