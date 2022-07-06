@@ -223,6 +223,8 @@ rsync -r username@remotehost.com:/remote/directory /local/directory # sync a dir
 
 # dig (DNS lookup utility)
 dig example.com # shows DNS information about resolving the given domain name
+dig +trace example.com # shows the DNS path to the given domain name
+dig example.com <RECORD_TYPE> # shows information about given record
 
 # arp
 arp -n # view ARP cache
