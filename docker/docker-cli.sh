@@ -20,6 +20,7 @@ docker run <image> ping google.com # run container with custom command
 docker run -d --name <containerName> <image> # run container and assign it a name (later it will be easier to identify it and remove it)
 docker run -p <hostport>:<containerPort> <image> # run container with port mapping
 docker run -v <hostpath>:<containerpath> <image> # run container with volume mapping
+docker run -e X='SomeValue' -e Y='SomeOtherValue' # run container and set X & Y environment variables for it
 
 # docker stats
 docker stats # show all containers stats (cpu, memory, network, etc)
