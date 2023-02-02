@@ -28,16 +28,17 @@ func main() {
 	///////
 	// MAPS
 	///////
-	dictionaryExample := make(map[string]string) // Creating a map/dict
-	dictionaryExample["key1"] = "value1"         // Assigning a value
+	mapExample := make(map[string]string) // Creating a map/dict
+	mapExample["key1"] = "value1"         // Assigning a value
 	// Check if key is in dictionary
-	if _, ok := dictionaryExample["key1"]; ok {
+	if _, ok := mapExample["key1"]; ok {
 		fmt.Println("Key is present in dictionary")
 	}
 	// Iterate over a dictionary
-	for key, value := range dictionaryExample {
+	for key, value := range mapExample {
 		fmt.Printf("Key: %s Value: %s\n", key, value)
 	}
+	delete(mapExample, "key1") // Delete key from a map
 
 	////////
 	// LOOPS
