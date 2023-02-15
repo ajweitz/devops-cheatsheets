@@ -38,9 +38,9 @@ arr.remove("Tulip")  # remove specific value from the array
 arr[-1] # accessing last item
 arr[1:4]  # range, will return ['Jasmine', 'Rose', 'Lili']
 arr[2:] # range from 2 to last item. Will return ['Jasmine', 'Rose', 'Lili', 'Daisy']
-arr.sort()  # sort list
+arr.sort()  # sort list IN PLACE
 arr = arr + arr2  # combine lists
-arr.reverse()  # reverse list
+arr.reverse()  # reverse list IN PLACE
 arr.index("Jasmine") # findining at what index we have a value, returns 1
 
 "Tulip" in arr  # if
