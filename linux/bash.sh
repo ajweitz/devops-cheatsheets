@@ -46,9 +46,9 @@ rm -rf exampledir # remove a directory without promting for confirmation
 
 # find
 find /home/ -name notes.txt # find files in /home/
-find . -name notes.txt # find files in the current directory use, 
+find . -name notes.txt # find files in the current directory
 find -type d -name myDir # look for directories
-
+find -exec somecommand {} \; # execute somecomand with file as arg {} for every matching file.
 
 ###################
 # TEXT MANIPULATION
